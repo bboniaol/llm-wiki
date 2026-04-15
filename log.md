@@ -449,3 +449,42 @@
 ## [2026-04-15] query | Minimum Viable Agent Harness Checklist
 - Filed: queries/minimum-viable-agent-harness-checklist.md
 - Updated: index.md
+
+## [2026-04-15] update | Social Benchmark and Product Signals (2026-04-14)
+- Updated: queries/social-benchmark-and-product-signals-2026-04-14.md
+
+## [2026-04-15] ingest | Natural-Language Agent Harnesses (NLAH) paper deep dive
+- Source URL: https://arxiv.org/abs/2603.25723
+- Raw source saved: raw/articles/nlah-arxiv-abs-2603-25723-2026-04-15.md
+- Raw source saved: raw/articles/nlah-arxiv-html-2603-25723-2026-04-15.md
+- Created: concepts/natural-language-agent-harnesses.md
+- Created: concepts/intelligent-harness-runtime.md
+- Updated: concepts/harness-engineering.md
+- Updated: concepts/agent-readable-repositories.md
+- Updated: queries/social-benchmark-and-product-signals-2026-04-14.md
+- Updated: index.md
+
+## [2026-04-15] query | What NLAH RQ2 and RQ3 Actually Show
+- Filed: queries/what-nlah-rq2-rq3-actually-show.md
+- Updated: index.md
+
+## [2026-04-15] ingest | Extreme Harness Engineering / Frontier / Symphony
+- Source URL: https://latent.space/p/harness-eng
+- Raw source saved: raw/articles/latent-space-extreme-harness-engineering-2026-04-15.md
+- Raw source saved: raw/articles/openai-frontier-overview-2026-04-15.md
+- Raw source saved: raw/articles/openai-symphony-spec-2026-04-15.md
+- Created: entities/openai-frontier.md
+- Created: entities/symphony.md
+- Filed: queries/extreme-harness-engineering.md
+- Updated: concepts/cloud-agent-operations.md
+- Updated: entities/openai.md
+- Updated: entities/codex.md
+- Updated: index.md
+
+## [2026-04-15] query | Harness Engineering System Map
+- Filed: queries/harness-engineering-system-map.md
+- Updated: index.md
+
+## [2026-04-15] query | Harness Engineering 7-Day Study Plan
+- Filed: queries/harness-engineering-7-day-study-plan.md
+- Updated: index.md

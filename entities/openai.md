@@ -4,7 +4,7 @@ created: 2026-04-14
 updated: 2026-04-14
 type: entity
 tags: [company, product, harness-engineering, agentic-engineering]
-sources: [raw/articles/openai-harness-engineering-2026-04-14.md]
+sources: [raw/articles/openai-harness-engineering-2026-04-14.md, raw/articles/latent-space-extreme-harness-engineering-2026-04-15.md, raw/articles/openai-frontier-overview-2026-04-15.md]
 ---
 
 # OpenAI
@@ -16,6 +16,7 @@ OpenAI 是这篇文章的发布方，也是文中所述 Codex 内部实验的组
 - 2025 年 8 月下旬，OpenAI 团队从空仓库启动一个由智能体主导生成的项目。
 - 五个月内，代码库增长到约一百万行，约 1,500 个 Pull Request 被打开并合并。
 - 文章强调“人类掌舵，智能体执行”，说明组织职责并未消失，而是迁移到了任务定义、环境设计与验收控制。
+- Latent.Space 后续文章进一步补了一个更极端的运行图景：Frontier 团队被描述为 OpenAI 内部最激进的 Codex 用户群，human attention 而不是 token 本身开始成为主要瓶颈，工作也从“盯 agent 写代码”上移到“设计 specs、skills、review surfaces、build loops 与 orchestration systems”。
 
 ## 组织层面的工程取向
 - 将代码仓库视为智能体可访问的唯一高保真知识边界。
@@ -26,6 +27,9 @@ OpenAI 是这篇文章的发布方，也是文中所述 Codex 内部实验的组
 - OpenAI 通过 [[codex]] 推动文章中的智能体软件工程实验。
 - 这篇文章是 [[harness-engineering]] 的典型案例，不是泛泛谈模型能力，而是强调系统设计。
 - 其知识管理方式与 [[agent-readable-repositories]] 高度相关。
+- [[openai-frontier]] 则把这条实验路线继续抬升到 enterprise agent platform / transformation 层。
 
 ## 来源
 - [[openai-harness-engineering-2026-04-14]]
+- [[latent-space-extreme-harness-engineering-2026-04-15]]
+- [[openai-frontier-overview-2026-04-15]]

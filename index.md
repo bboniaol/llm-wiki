@@ -2,7 +2,7 @@
 
 > AI 圈 Harness Engineering 学习知识库索引。
 > 每个页面按类型登记，并附一行摘要。
-> Last updated: 2026-04-15 | Total pages: 64
+> Last updated: 2026-04-15 | Total pages: 72
 
 ## Entities
 <!-- Alphabetical within section -->
@@ -22,6 +22,7 @@
 - [[letta]] — 把 memory-first coding harness、git-backed memory filesystem 与 Context Constitution 收束成一条 experiential AI 路线的公司。
 - [[money-forward]] — Cursor 的跨 engineering / QA / product / design adoption 公开案例主体。
 - [[openai]] — 通过真实产品实践验证 harness engineering 的组织与方法论主体。
+- [[openai-frontier]] — OpenAI 面向 enterprise agent deployment 与 transformation 的平台层上下文。
 - [[sentry]] — Claude Managed Agents 在 bug fixing → PR 闭环中的公开采用案例主体。
 - [[wolfbench]] — 当前库里关于第三方 harness benchmark 的一个公开信号来源。
 
@@ -43,11 +44,14 @@
 - [[entangled-software]] — 当 harness 也 commodity 化后，软件与客户工作方式双向塑形、持续适配的一种上层产品判断框架。
 - [[evaluator-driven-qa]] — 把生成与验收拆给不同 agent 角色的质量保障模式。
 - [[harness-engineering]] — 围绕 coding agent 设计环境、约束与反馈回路的工程方法。
+- [[intelligent-harness-runtime]] — NLAH 论文提出的共享 runtime substrate，用来解释并执行自然语言 harness。
 - [[long-running-agent-tasks]] — 处理长时间、多阶段、可恢复智能体任务的工程方法。
 - [[multi-agent-delegation]] — 将复杂任务拆给多个智能体角色协作完成的委派模式。
+- [[natural-language-agent-harnesses]] — 把 harness pattern 外化成可执行自然语言工件，并在 shared runtime 下迁移、比较与消融的研究路线。
 - [[pluggable-agent-backends]] — 把 agent 底层存储与执行面设计成可替换 backend 的工程模式。
 - [[progressive-disclosure]] — 按需暴露规则、知识与工具，避免在会话开始时一次性灌满上下文。
 - [[repo-as-system-of-record]] — 把代码仓库作为规则、计划、决策和上下文的主事实边界。
+- [[symphony]] — 把 issue work 转成 isolated autonomous implementation runs 的 OpenAI orchestration 服务 / ghost library。
 
 ## Comparisons
 - [[approval-vs-sandbox-vs-observability]] — 对比批准机制、执行隔离与可观测性在控制面中的不同职责。
@@ -70,9 +74,13 @@
 - [[coding-agent-platform-readiness-audit]] — 把 workflow、reliability、governance、org、platform 五层 readiness 压成一张可直接审团队的审计表。
 - [[cursor-platform-readiness-audit]] — 基于当前公开 docs 与 Money Forward 案例，审 Cursor 是否真的已经进入平台 readiness 阶段。
 - [[deepagents-platform-readiness-audit]] — 基于公开实现与 harness 抽象资料，审 Deep Agents 作为开放平台骨架是否已经 readiness 过线。
+- [[extreme-harness-engineering]] — 把 OpenAI Frontier / Symphony / dark factory 这条极端 agent org 线压成一页运行面分析。
 - [[from-local-coding-agent-to-team-agent-platform]] — 把个人本地 coding agent 演进到团队级 agent 平台的路径压成六阶段路线图。
+- [[harness-engineering-7-day-study-plan]] — 按工作日 2 小时、周末加量的节奏，把 harness engineering 学成一周可执行的系统学习路线。
+- [[harness-engineering-system-map]] — 把当前知识库里的 harness engineering 组件串成一张八层思维导图与系统学习地图。
 - [[how-to-read-agent-harness-benchmarks]] — 总结读 harness benchmark 时该优先看哪些结构信号，而不是只盯单个高分。
 - [[managed-harness-vs-open-harness]] — 从运行面、控制权、组织治理与 lock-in 风险四个角度，判断托管 harness 和开放 harness 各适合什么阶段。
 - [[minimum-viable-agent-harness-checklist]] — 把 Anthropic / Letta / Karan 这三条线压成一张最小可落地的 agent harness 清单。
 - [[social-benchmark-and-product-signals-2026-04-14]] — 汇总一批短社交信号里关于 harness、self-improvement、long-horizon benchmark、cloud runtime 与 open-vs-managed 路线分化的共振趋势。
 - [[three-platform-archetypes-for-coding-agents]] — 把平台工作台型、托管底座型、开放骨架型三条 coding agent 平台路线收成一张 archetype 总图。
+- [[what-nlah-rq2-rq3-actually-show]] — 提炼 NLAH 论文里模块消融与 code-to-text migration 真正说明了什么。

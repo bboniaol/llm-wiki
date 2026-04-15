@@ -4,7 +4,7 @@ created: 2026-04-14
 updated: 2026-04-15
 type: concept
 tags: [concept, harness-engineering, agentic-engineering, workflow, reliability, observability]
-sources: [raw/articles/openai-harness-engineering-2026-04-14.md, raw/articles/anthropic-effective-harnesses-long-running-agents-2026-04-14.md, raw/articles/anthropic-harness-design-long-running-apps-2026-04-14.md, raw/articles/langchain-anatomy-of-an-agent-harness-2026-04-14.md, raw/articles/humanlayer-skill-issue-harness-engineering-2026-04-14.md, raw/articles/humanlayer-writing-a-good-claude-md-2026-04-14.md, raw/articles/humanlayer-advanced-context-engineering-2026-04-14.md, raw/articles/humanlayer-context-efficient-backpressure-2026-04-14.md, raw/articles/inngest-harness-not-framework-2026-04-14.md, raw/articles/wolfbench-hermes-agent-x-post-2026-04-14.md, raw/articles/harrison-chase-x-post-2042612328701812789-2026-04-14.md, raw/articles/rohit-x-post-2041548810804211936-2026-04-14.md, raw/articles/viv-x-post-2041927488918413589-2026-04-14.md, raw/articles/sarah-wooders-x-post-2040121230473457921-2026-04-15.md, raw/articles/joao-moura-x-post-2043726271449112776-2026-04-15.md, raw/articles/karan-x-post-2043618895328932340-2026-04-15.md]
+sources: [raw/articles/openai-harness-engineering-2026-04-14.md, raw/articles/anthropic-effective-harnesses-long-running-agents-2026-04-14.md, raw/articles/anthropic-harness-design-long-running-apps-2026-04-14.md, raw/articles/langchain-anatomy-of-an-agent-harness-2026-04-14.md, raw/articles/humanlayer-skill-issue-harness-engineering-2026-04-14.md, raw/articles/humanlayer-writing-a-good-claude-md-2026-04-14.md, raw/articles/humanlayer-advanced-context-engineering-2026-04-14.md, raw/articles/humanlayer-context-efficient-backpressure-2026-04-14.md, raw/articles/inngest-harness-not-framework-2026-04-14.md, raw/articles/wolfbench-hermes-agent-x-post-2026-04-14.md, raw/articles/harrison-chase-x-post-2042612328701812789-2026-04-14.md, raw/articles/rohit-x-post-2041548810804211936-2026-04-14.md, raw/articles/viv-x-post-2041927488918413589-2026-04-14.md, raw/articles/sarah-wooders-x-post-2040121230473457921-2026-04-15.md, raw/articles/joao-moura-x-post-2043726271449112776-2026-04-15.md, raw/articles/karan-x-post-2043618895328932340-2026-04-15.md, raw/articles/nlah-arxiv-html-2603-25723-2026-04-15.md]
 ---
 
 # Harness Engineering
@@ -27,6 +27,7 @@ sources: [raw/articles/openai-harness-engineering-2026-04-14.md, raw/articles/an
 - Rohit 对 Claude Code 结构的逆向阅读则强调：production agent system 的可复用价值不只在 prompt，而在 permissions、compaction、retry pipelines、streaming loop 与 sub-agent isolation 这些“基础设施层 harness”。
 - Viv 的 Better-Harness 文章型短帖又把 evals 拉进来，提出可以把 evals 视为 harness 的学习信号，用 holdout、tagging 与 human review 驱动持续 hill-climbing。
 - João Moura 则从另一面提出反论：即便 harness 比 framework 更厚、内建 planning、memory、filesystem 与 compaction，这一层也会继续 commodity 化，因此 harness 更像 plumbing，而不是长期防御层。
+- NLAH 论文则把另一条很值得重视的路线推清楚了：如果 harness 真的是决定 agent 行为的高杠杆层，那它不该永远埋在 controller code 里，而应该被外化成可迁移、可比较、可消融的对象。作者用 [[natural-language-agent-harnesses]] 与 [[intelligent-harness-runtime]]，把 harness 的 pattern layer 明确拆成 contracts、roles、stages、state semantics 与 artifact discipline。
 
 ## 关键组成
 - 代码仓库从一开始就被设计成智能体的工作环境，而不是人类工程师的附属产物。
@@ -66,7 +67,8 @@ sources: [raw/articles/openai-harness-engineering-2026-04-14.md, raw/articles/an
 - 它也依赖 [[agent-approval-patterns]]、[[agent-sandboxing]]、[[agent-feedback-loops]]、[[agent-observability]] 等能力共同组成控制与纠偏系统。
 - 从组织视角看，[[openai]]、Anthropic 和 [[langchain]] 都把它当作真实工程方法论，而不是实验室 demo。
 - [[multi-agent-delegation]] 在这里更多体现为角色化分工，而不是单纯并行提速。
-- 从 [[humanlayer]] 的说法看，[[harness-engineering]] 也可以被理解为 [[context-engineering]] 在 coding agent 配置面上的具体落点。
+- [[humanlayer]] 的说法看，[[harness-engineering]] 也可以被理解为 [[context-engineering]] 在 coding agent 配置面上的具体落点。
+- [[natural-language-agent-harnesses]] 则提供了一个更研究化的延伸：把 harness pattern 直接外化成可执行文本对象，在 shared runtime 下做迁移与消融。
 
 ## 未决问题
 - 这种做法在别的团队、别的仓库结构上能复制到什么程度？
@@ -88,3 +90,4 @@ sources: [raw/articles/openai-harness-engineering-2026-04-14.md, raw/articles/an
 - [[sarah-wooders-x-post-2040121230473457921-2026-04-15]]
 - [[joao-moura-x-post-2043726271449112776-2026-04-15]]
 - [[karan-x-post-2043618895328932340-2026-04-15]]
+- [[nlah-arxiv-html-2603-25723-2026-04-15]]
