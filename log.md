@@ -1,0 +1,451 @@
+# Wiki Log
+
+> Chronological record of all wiki actions. Append-only.
+> Format: `## [YYYY-MM-DD] action | subject`
+> Actions: ingest, update, query, lint, create, archive, delete
+> When this file exceeds 500 entries, rotate: rename to log-YYYY.md, start fresh.
+
+## [2026-04-14] create | Wiki initialized
+- Domain: AI 圈 Harness Engineering 学习知识库
+- Structure created with SCHEMA.md, index.md, log.md
+- Directories created: raw/articles, raw/papers, raw/transcripts, raw/assets, entities, concepts, comparisons, queries
+
+## [2026-04-14] ingest | 工程技术：在智能体优先的世界中利用 Codex
+- Source URL: https://openai.com/zh-Hans-CN/index/harness-engineering/
+- Raw source saved: raw/articles/openai-harness-engineering-2026-04-14.md
+- Direct fetch returned 403; ingested via r.jina.ai mirror fallback
+- Created: entities/openai.md
+- Created: entities/codex.md
+- Created: concepts/harness-engineering.md
+- Created: concepts/agent-readable-repositories.md
+- Updated: index.md
+
+## [2026-04-14] update | 补充基础概念骨架
+- Created: concepts/context-engineering.md
+- Created: concepts/agentic-engineering.md
+- Created: comparisons/harness-vs-context-vs-agentic-engineering.md
+- Updated: index.md
+
+## [2026-04-14] update | 补充工程层概念
+- Created: concepts/agent-feedback-loops.md
+- Created: concepts/coding-agent-evals.md
+- Created: concepts/agent-observability.md
+- Updated: index.md
+
+## [2026-04-14] update | 补充控制层概念
+- Created: concepts/agent-approval-patterns.md
+- Created: concepts/agent-sandboxing.md
+- Created: concepts/repo-as-system-of-record.md
+- Updated: index.md
+
+## [2026-04-14] update | 补充实践层页面
+- Created: concepts/coding-agent-workflow-patterns.md
+- Created: concepts/doc-gardening-agents.md
+- Created: comparisons/approval-vs-sandbox-vs-observability.md
+- Updated: index.md
+
+## [2026-04-14] update | 补充工程专题页
+- Created: concepts/long-running-agent-tasks.md
+- Created: concepts/agent-memory-patterns.md
+- Created: concepts/multi-agent-delegation.md
+- Created: concepts/agent-reliability-patterns.md
+- Created: comparisons/codex-vs-claude-code-vs-cursor.md
+- Updated: index.md
+
+## [2026-04-14] update | 补充 Claude Code 与 Cursor 实体资料
+- Raw source saved: raw/articles/anthropic-claude-code-2026-04-14.md
+- Raw source saved: raw/articles/cursor-product-2026-04-14.md
+- Created: entities/claude-code.md
+- Created: entities/cursor.md
+- Updated: comparisons/codex-vs-claude-code-vs-cursor.md
+- Updated: index.md
+
+## [2026-04-14] ingest | Claude Code 与 Cursor 文档层
+- Raw source saved: raw/articles/claude-code-docs-overview-2026-04-14.md
+- Raw source saved: raw/articles/claude-code-auto-mode-2026-04-14.md
+- Raw source saved: raw/articles/cursor-docs-subagents-2026-04-14.md
+- Raw source saved: raw/articles/cursor-docs-rules-2026-04-14.md
+- Raw source saved: raw/articles/cursor-docs-mcp-2026-04-14.md
+- Raw source saved: raw/articles/cursor-docs-terminal-2026-04-14.md
+- Raw source saved: raw/articles/cursor-docs-agent-overview-2026-04-14.md
+- Updated: entities/claude-code.md
+- Updated: entities/cursor.md
+- Updated: comparisons/codex-vs-claude-code-vs-cursor.md
+- Updated: index.md
+
+## [2026-04-14] ingest | Effective harnesses for long-running agents
+- Source URL: https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents
+- Raw source saved: raw/articles/anthropic-effective-harnesses-long-running-agents-2026-04-14.md
+- Updated: concepts/long-running-agent-tasks.md
+- Updated: concepts/harness-engineering.md
+- Updated: concepts/agent-approval-patterns.md
+- Updated: concepts/agent-reliability-patterns.md
+- Created: entities/anthropic.md
+- Updated: entities/claude-code.md
+- Updated: comparisons/codex-vs-claude-code-vs-cursor.md
+- Updated: index.md
+
+## [2026-04-14] ingest | Claude Code 深挖文档层
+- Raw source saved: raw/articles/claude-code-docs-permission-modes-2026-04-14.md
+- Raw source saved: raw/articles/claude-code-docs-memory-2026-04-14.md
+- Raw source saved: raw/articles/claude-code-docs-sub-agents-2026-04-14.md
+- Raw source saved: raw/articles/claude-code-docs-common-workflows-2026-04-14.md
+- Updated: concepts/agent-memory-patterns.md
+- Updated: concepts/coding-agent-workflow-patterns.md
+- Updated: concepts/multi-agent-delegation.md
+- Updated: entities/claude-code.md
+- Updated: comparisons/codex-vs-claude-code-vs-cursor.md
+
+
+## [2026-04-14] ingest | Harness design for long-running application development
+- Source URL: https://www.anthropic.com/engineering/harness-design-long-running-apps
+- Raw source saved: raw/articles/anthropic-harness-design-long-running-apps-2026-04-14.md
+- Updated: concepts/long-running-agent-tasks.md
+- Updated: concepts/harness-engineering.md
+- Updated: concepts/agent-feedback-loops.md
+- Updated: concepts/agent-reliability-patterns.md
+- Updated: concepts/multi-agent-delegation.md
+- Updated: entities/anthropic.md
+- Updated: entities/claude-code.md
+- Updated: index.md
+
+## [2026-04-14] ingest | Effective context engineering for AI agents
+- Source URL: https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents
+- Raw source saved: raw/articles/anthropic-effective-context-engineering-2026-04-14.md
+- Updated: concepts/context-engineering.md
+- Updated: concepts/agent-memory-patterns.md
+- Updated: concepts/multi-agent-delegation.md
+- Updated: comparisons/harness-vs-context-vs-agentic-engineering.md
+- Updated: entities/anthropic.md
+
+## [2026-04-14] update | 补充 evaluator-driven QA 概念页
+- Created: concepts/evaluator-driven-qa.md
+- Updated: concepts/agent-feedback-loops.md
+- Updated: concepts/agent-reliability-patterns.md
+- Updated: index.md
+
+## [2026-04-14] ingest | Cursor 控制面与浏览器工具深挖
+- Raw source saved: raw/articles/cursor-docs-reference-permissions-2026-04-14.md
+- Raw source saved: raw/articles/cursor-docs-reference-sandbox-2026-04-14.md
+- Raw source saved: raw/articles/cursor-docs-browser-2026-04-14.md
+- Raw source saved: raw/articles/cursor-docs-agent-security-2026-04-14.md
+- Updated: entities/cursor.md
+- Updated: concepts/agent-sandboxing.md
+- Updated: concepts/agent-approval-patterns.md
+- Updated: concepts/coding-agent-workflow-patterns.md
+- Updated: concepts/agent-reliability-patterns.md
+- Updated: comparisons/codex-vs-claude-code-vs-cursor.md
+- Updated: index.md
+
+## [2026-04-14] update | 补充评估与人工审查对比页
+- Created: comparisons/evaluator-driven-qa-vs-human-in-the-loop-review.md
+- Updated: index.md
+
+## [2026-04-14] ingest | Cursor cloud agents / automations / enterprise controls
+- Raw source saved: raw/articles/cursor-docs-cloud-agent-overview-2026-04-14.md
+- Raw source saved: raw/articles/cursor-docs-cloud-agent-automations-2026-04-14.md
+- Raw source saved: raw/articles/cursor-docs-cloud-agent-capabilities-2026-04-14.md
+- Raw source saved: raw/articles/cursor-docs-enterprise-llm-safety-controls-2026-04-14.md
+- Raw source saved: raw/articles/cursor-docs-enterprise-compliance-monitoring-2026-04-14.md
+- Created: concepts/cloud-agent-operations.md
+- Updated: entities/cursor.md
+- Updated: concepts/agent-observability.md
+- Updated: concepts/agent-sandboxing.md
+- Updated: concepts/agent-reliability-patterns.md
+- Updated: concepts/coding-agent-workflow-patterns.md
+- Updated: comparisons/codex-vs-claude-code-vs-cursor.md
+- Updated: index.md
+
+## [2026-04-14] update | 补充本地控制与云端控制对比页
+- Created: comparisons/local-agent-controls-vs-cloud-agent-controls.md
+- Updated: index.md
+
+## [2026-04-14] ingest | The Anatomy of an Agent Harness
+- Source URL: https://blog.langchain.com/the-anatomy-of-an-agent-harness/
+- Raw source saved: raw/articles/langchain-anatomy-of-an-agent-harness-2026-04-14.md
+- Created: entities/langchain.md
+- Updated: concepts/harness-engineering.md
+- Updated: concepts/agent-readable-repositories.md
+- Updated: concepts/agent-memory-patterns.md
+- Updated: concepts/agent-sandboxing.md
+- Updated: concepts/long-running-agent-tasks.md
+- Updated: comparisons/harness-vs-context-vs-agentic-engineering.md
+- Updated: index.md
+
+## [2026-04-14] ingest | Deep Agents overview
+- Source URL: https://docs.langchain.com/oss/python/deepagents/overview
+- Raw source saved: raw/articles/langchain-deepagents-overview-2026-04-14.md
+- Created: entities/deepagents.md
+- Updated: entities/langchain.md
+- Updated: concepts/multi-agent-delegation.md
+- Updated: concepts/agent-memory-patterns.md
+- Updated: concepts/agent-approval-patterns.md
+- Updated: index.md
+
+## [2026-04-14] ingest | Deep Agents backends / sandboxes / permissions / HITL
+- Source URL: https://docs.langchain.com/oss/python/deepagents/overview
+- Raw source saved: raw/articles/langchain-deepagents-overview-2026-04-14.md
+- Created: concepts/pluggable-agent-backends.md
+- Updated: entities/deepagents.md
+- Updated: entities/langchain.md
+- Updated: concepts/multi-agent-delegation.md
+- Updated: concepts/agent-memory-patterns.md
+- Updated: concepts/agent-approval-patterns.md
+- Updated: index.md
+
+## [2026-04-14] update | 补充 framework / runtime / harness 对比页
+- Created: comparisons/framework-vs-runtime-vs-harness.md
+- Updated: index.md
+
+## [2026-04-14] ingest | Money Forward brings Cursor’s coding agents to product, design, and QA
+- Source URL: https://cursor.com/blog/money-forward
+- Raw source saved: raw/articles/cursor-money-forward-case-study-2026-04-14.md
+- Created: entities/money-forward.md
+- Updated: entities/cursor.md
+- Updated: concepts/coding-agent-workflow-patterns.md
+- Updated: concepts/agentic-engineering.md
+- Updated: concepts/cloud-agent-operations.md
+- Updated: comparisons/codex-vs-claude-code-vs-cursor.md
+- Updated: index.md
+
+## [2026-04-14] ingest | How Sentry built end-to-end bug fixing with Claude Managed Agents
+- Source URL: https://claude.com/customers/sentry
+- Raw source saved: raw/articles/anthropic-sentry-managed-agents-case-study-2026-04-14.md
+- Created: entities/sentry.md
+- Created: entities/claude-managed-agents.md
+- Updated: entities/anthropic.md
+- Updated: concepts/cloud-agent-operations.md
+- Updated: concepts/agentic-engineering.md
+- Updated: index.md
+
+## [2026-04-14] ingest | CircleCI customer story with Claude
+- Source URL: https://claude.com/customers/circleci
+- Raw source saved: raw/articles/anthropic-circleci-claude-case-study-2026-04-14.md
+- Created: entities/circleci.md
+- Updated: entities/claude-code.md
+- Updated: entities/anthropic.md
+- Updated: concepts/coding-agent-workflow-patterns.md
+- Updated: index.md
+
+## [2026-04-14] ingest | Skill Issue: Harness engineering for coding agents
+- Source URL: https://www.humanlayer.dev/blog/skill-issue-harness-engineering-for-coding-agents
+- Raw source saved: raw/articles/humanlayer-skill-issue-harness-engineering-2026-04-14.md
+- Ingested via r.jina.ai mirror
+- Created: entities/humanlayer.md
+- Updated: concepts/harness-engineering.md
+- Updated: concepts/context-engineering.md
+- Updated: concepts/multi-agent-delegation.md
+- Updated: concepts/agent-reliability-patterns.md
+- Updated: index.md
+
+## [2026-04-14] ingest | HumanLayer 配套文章：CLAUDE.md / advanced context engineering / context-efficient backpressure
+- Raw source saved: raw/articles/humanlayer-writing-a-good-claude-md-2026-04-14.md
+- Raw source saved: raw/articles/humanlayer-advanced-context-engineering-2026-04-14.md
+- Raw source saved: raw/articles/humanlayer-context-efficient-backpressure-2026-04-14.md
+- Ingested via r.jina.ai mirror
+- Created: concepts/progressive-disclosure.md
+- Updated: entities/humanlayer.md
+- Updated: concepts/harness-engineering.md
+- Updated: concepts/context-engineering.md
+- Updated: concepts/agent-memory-patterns.md
+- Updated: concepts/long-running-agent-tasks.md
+- Updated: concepts/agent-reliability-patterns.md
+- Updated: index.md
+
+## [2026-04-14] ingest | Your agent needs a harness, not a framework
+- Source URL: https://www.inngest.com/blog/your-agent-needs-a-harness-not-a-framework
+- Raw source saved: raw/articles/inngest-harness-not-framework-2026-04-14.md
+- Ingested via r.jina.ai mirror
+- Created: entities/inngest.md
+- Updated: concepts/harness-engineering.md
+- Updated: comparisons/framework-vs-runtime-vs-harness.md
+- Updated: concepts/multi-agent-delegation.md
+- Updated: concepts/long-running-agent-tasks.md
+- Updated: index.md
+
+## [2026-04-14] update | 补充 in-process harness 与 event-driven harness 对比页
+- Created: comparisons/in-process-harness-vs-event-driven-harness.md
+- Updated: entities/humanlayer.md
+- Updated: entities/inngest.md
+- Updated: index.md
+
+## [2026-04-14] update | 补充 deterministic backpressure 与 durable retries 对比页
+- Created: comparisons/deterministic-backpressure-vs-durable-retries.md
+- Updated: entities/humanlayer.md
+- Updated: entities/inngest.md
+- Updated: concepts/agent-reliability-patterns.md
+- Updated: index.md
+
+## [2026-04-14] query | Coding Agent Reliability Stack
+- Filed: queries/coding-agent-reliability-stack.md
+- Updated: concepts/agent-reliability-patterns.md
+- Updated: concepts/harness-engineering.md
+- Updated: index.md
+
+## [2026-04-14] lint | 8 issues found
+- Fixed: added missing tags `open-source` and `documentation` to SCHEMA.md taxonomy
+- Fixed: added inbound links for comparisons/approval-vs-sandbox-vs-observability.md
+- Fixed: added inbound links for comparisons/evaluator-driven-qa-vs-human-in-the-loop-review.md
+- Fixed: added inbound links for comparisons/local-agent-controls-vs-cloud-agent-controls.md
+- Updated: concepts/agent-approval-patterns.md
+- Updated: concepts/agent-sandboxing.md
+- Updated: concepts/evaluator-driven-qa.md
+- Updated: concepts/cloud-agent-operations.md
+- Updated: SCHEMA.md
+
+## [2026-04-14] query | From Local Coding Agent to Team Agent Platform
+- Filed: queries/from-local-coding-agent-to-team-agent-platform.md
+- Updated: queries/coding-agent-reliability-stack.md
+- Updated: concepts/cloud-agent-operations.md
+- Updated: index.md
+
+## [2026-04-14] ingest | WolfBench X post on Hermes Agent benchmark result
+- Source URL: https://x.com/wandb/status/2039797885982953800
+- Raw source saved: raw/articles/wolfbench-hermes-agent-x-post-2026-04-14.md
+- Ingested via r.jina.ai mirror
+- Created: entities/hermes-agent.md
+- Created: entities/wolfbench.md
+- Updated: concepts/coding-agent-evals.md
+- Updated: concepts/harness-engineering.md
+- Updated: index.md
+
+## [2026-04-14] ingest | WolfBench site overview
+- Source URL: https://wolfbench.ai/
+- Raw source saved: raw/articles/wolfbench-site-overview-2026-04-14.md
+- Ingested via r.jina.ai mirror
+- Updated: entities/wolfbench.md
+- Updated: entities/hermes-agent.md
+- Updated: concepts/coding-agent-evals.md
+
+## [2026-04-14] ingest | WolfBench GitHub repo overview
+- Source URL: https://github.com/wandb/WolfBench
+- Raw source saved: raw/articles/wolfbench-github-repo-overview-2026-04-14.md
+- Ingested via r.jina.ai mirror
+- Updated: entities/wolfbench.md
+- Updated: entities/hermes-agent.md
+- Updated: concepts/coding-agent-evals.md
+
+## [2026-04-14] query | How to Read Agent Harness Benchmarks
+- Filed: queries/how-to-read-agent-harness-benchmarks.md
+- Updated: concepts/coding-agent-evals.md
+- Updated: entities/wolfbench.md
+- Updated: index.md
+
+## [2026-04-14] query | Social Benchmark and Product Signals (2026-04-14)
+- Filed: queries/social-benchmark-and-product-signals-2026-04-14.md
+- Updated: index.md
+- Note: 12 social posts fetched successfully in this batch; remaining URLs need follow-up fetch attempts due flaky X extraction
+
+## [2026-04-14] ingest | X social signals follow-up batch
+- Raw source saved: raw/articles/pawel-huryn-x-post-2042008828334764162-2026-04-14.md
+- Raw source saved: raw/articles/ramp-labs-x-post-2042660310851449223-2026-04-14.md
+- Raw source saved: raw/articles/rohit-x-post-2041548810804211936-2026-04-14.md
+- Raw source saved: raw/articles/gabe-pereyra-x-post-2041568552256197074-2026-04-14.md
+- Raw source saved: raw/articles/gabe-pereyra-x-post-2041167397453758863-2026-04-14.md
+- Raw source saved: raw/articles/harrison-chase-x-post-2042612328701812789-2026-04-14.md
+- Raw source saved: raw/articles/harrison-chase-x-post-2042978845347745871-2026-04-14.md
+- Raw source saved: raw/articles/viv-x-post-2041927488918413589-2026-04-14.md
+- Raw source saved: raw/articles/alexz-x-post-2041951380836147479-2026-04-14.md
+- Raw source saved: raw/articles/claude-x-post-2041927687460024721-2026-04-14.md
+- Raw source saved: raw/articles/guru-x-post-2042450832126591251-2026-04-14.md
+- Updated: queries/social-benchmark-and-product-signals-2026-04-14.md
+- Updated: concepts/harness-engineering.md
+- Updated: concepts/cloud-agent-operations.md
+- Updated: concepts/agent-memory-patterns.md
+- Updated: entities/claude-managed-agents.md
+- Updated: index.md
+
+## [2026-04-14] query | Managed Harness vs Open Harness
+- Filed: queries/managed-harness-vs-open-harness.md
+- Updated: index.md
+
+## [2026-04-14] query | Coding Agent Adoption Patterns
+- Filed: queries/coding-agent-adoption-patterns.md
+- Updated: index.md
+
+## [2026-04-14] query | Coding Agent Org Design Patterns
+- Filed: queries/coding-agent-org-design-patterns.md
+- Updated: queries/coding-agent-adoption-patterns.md
+- Updated: index.md
+
+## [2026-04-14] query | Coding Agent Governance Checklist
+- Filed: queries/coding-agent-governance-checklist.md
+- Updated: index.md
+
+## [2026-04-14] query | Coding Agent Maturity Model
+- Filed: queries/coding-agent-maturity-model.md
+- Updated: index.md
+
+## [2026-04-14] query | Coding Agent Platform Readiness Audit
+- Filed: queries/coding-agent-platform-readiness-audit.md
+- Updated: index.md
+
+## [2026-04-14] query | Cursor Platform Readiness Audit
+- Filed: queries/cursor-platform-readiness-audit.md
+- Updated: index.md
+
+## [2026-04-14] query | Claude Managed Agents Platform Readiness Audit
+- Filed: queries/claude-managed-agents-platform-readiness-audit.md
+- Updated: index.md
+
+## [2026-04-14] update | Cursor vs Claude Managed Agents platform readiness comparison
+- Created: comparisons/cursor-vs-claude-managed-agents-platform-readiness.md
+- Updated: index.md
+
+## [2026-04-14] query | Deep Agents Platform Readiness Audit
+- Filed: queries/deepagents-platform-readiness-audit.md
+- Updated: index.md
+
+## [2026-04-14] query | Three platform archetypes for coding agents
+- Filed: queries/three-platform-archetypes-for-coding-agents.md
+- Updated: index.md
+
+## [2026-04-15] ingest | Harrison Chase “Your harness, your memory”
+- Source URL: https://x.com/hwchase17/status/2042978500567609738
+- Raw source saved: raw/articles/harrison-chase-x-post-2042978500567609738-2026-04-15.md
+- Updated: concepts/agent-memory-patterns.md
+- Updated: queries/managed-harness-vs-open-harness.md
+- Updated: entities/deepagents.md
+- Updated: entities/langchain.md
+- Updated: index.md
+
+## [2026-04-15] ingest | Sarah Wooders “Why memory isn't a plugin (it's the harness)”
+- Source URL: https://x.com/sarahwooders/status/2040121230473457921
+- Raw source saved: raw/articles/sarah-wooders-x-post-2040121230473457921-2026-04-15.md
+- Updated: concepts/agent-memory-patterns.md
+- Updated: concepts/harness-engineering.md
+- Updated: concepts/agent-readable-repositories.md
+
+## [2026-04-15] ingest | Letta Context Constitution
+- Source URL: https://www.letta.com/blog/context-constitution
+- Raw source saved: raw/articles/letta-context-constitution-blog-2026-04-15.md
+- Raw source saved: raw/articles/letta-context-constitution-constitution-md-2026-04-15.md
+- Created: entities/letta.md
+- Created: concepts/context-constitution.md
+- Updated: concepts/context-engineering.md
+- Updated: concepts/progressive-disclosure.md
+- Updated: concepts/agent-memory-patterns.md
+- Updated: index.md
+
+## [2026-04-15] ingest | João Moura “Agent Harnesses Are Dead. Long Live Agent Harnesses.”
+- Source URL: https://x.com/joaomdmoura/status/2043726271449112776
+- Raw source saved: raw/articles/joao-moura-x-post-2043726271449112776-2026-04-15.md
+- Created: entities/crewai.md
+- Created: concepts/entangled-software.md
+- Updated: concepts/harness-engineering.md
+- Updated: concepts/agentic-engineering.md
+- Updated: index.md
+
+## [2026-04-15] ingest | Karan “Agent Harness is the new system design in 2026”
+- Source URL: https://x.com/kmeanskaran/status/2043618895328932340
+- Raw source saved: raw/articles/karan-x-post-2043618895328932340-2026-04-15.md
+- Created: entities/desysflow.md
+- Updated: concepts/evaluator-driven-qa.md
+- Updated: concepts/agent-memory-patterns.md
+- Updated: concepts/agent-readable-repositories.md
+- Updated: concepts/harness-engineering.md
+- Updated: index.md
+
+## [2026-04-15] query | Minimum Viable Agent Harness Checklist
+- Filed: queries/minimum-viable-agent-harness-checklist.md
+- Updated: index.md
