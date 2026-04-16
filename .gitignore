@@ -1,0 +1,7 @@
+# macOS noise
+.DS_Store
+
+# Local Obsidian view/layout state
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/graph.json
