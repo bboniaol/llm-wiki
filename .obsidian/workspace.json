@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "7ee2744da4e3a96f",
+        "id": "70d24fc9641a5b09",
         "type": "tabs",
         "children": [
           {
-            "id": "e0d8cc788ab101ab",
+            "id": "cf2f66e897746b59",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "index.md",
-                "mode": "preview",
+                "file": "queries/harness-engineering-system-map.md",
+                "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "index"
+              "title": "harness-engineering-system-map"
             }
           }
         ]
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "index.md",
+                "file": "queries/harness-engineering-system-map.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for index"
+              "title": "Backlinks for harness-engineering-system-map"
             }
           },
           {
@@ -113,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "index.md",
+                "file": "queries/harness-engineering-system-map.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from index"
+              "title": "Outgoing links from harness-engineering-system-map"
             }
           },
           {
@@ -156,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "index.md",
+                "file": "queries/harness-engineering-system-map.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of index"
+              "title": "Outline of harness-engineering-system-map"
             }
           }
         ]
@@ -183,33 +183,34 @@
       "bases:Create new base": false
     }
   },
-  "active": "e0d8cc788ab101ab",
+  "active": "cf2f66e897746b59",
   "lastOpenFiles": [
-    "log.md",
+    "queries/from-offline-benchmark-to-online-evals.md",
+    "raw/articles/meticulous-product-overview-2026-04-16.md",
+    "raw/articles/coderabbit-docs-overview-2026-04-16.md",
+    "raw/articles/phoenix-evaluation-overview-2026-04-16.md",
+    "raw/articles/langfuse-evaluation-overview-2026-04-16.md",
+    "raw/articles/braintrust-score-production-traces-2026-04-16.md",
+    "raw/articles/langsmith-evaluation-overview-2026-04-16.md",
+    "queries/harness-engineering-signals-2026-04-16.md",
+    "entities/cognition.md",
+    "raw/articles/langchain-agent-improvement-loop-2026-04-16.md",
+    "raw/articles/langchain-x-post-2044429013301485916-2026-04-16.md",
+    "raw/articles/cognition-swe-check-10x-faster-2026-04-16.md",
+    "raw/articles/cognition-x-post-2044174496312242544-2026-04-16.md",
+    "raw/articles/cursor-x-post-2044136953239740909-2026-04-16.md",
     "index.md",
-    "queries/minimum-viable-agent-harness-checklist.md",
-    "SCHEMA.md",
-    "entities/desysflow.md",
-    "raw/articles/karan-x-post-2043618895328932340-2026-04-15.md",
-    "concepts/entangled-software.md",
-    "entities/crewai.md",
-    "raw/articles/joao-moura-x-post-2043726271449112776-2026-04-15.md",
-    "raw/articles/anthropic-circleci-claude-case-study-2026-04-14.md",
-    "raw/articles/alexz-x-post-2041951380836147479-2026-04-14.md",
-    "concepts/context-constitution.md",
-    "entities/letta.md",
-    "raw/articles/letta-context-constitution-constitution-md-2026-04-15.md",
-    "raw/articles/letta-context-constitution-blog-2026-04-15.md",
-    "raw/articles/sarah-wooders-x-post-2040121230473457921-2026-04-15.md",
-    "raw/articles/harrison-chase-x-post-2042978500567609738-2026-04-15.md",
-    "queries/three-platform-archetypes-for-coding-agents.md",
-    "queries/deepagents-platform-readiness-audit.md",
-    "comparisons/cursor-vs-claude-managed-agents-platform-readiness.md",
-    "queries/claude-managed-agents-platform-readiness-audit.md",
-    "queries/cursor-platform-readiness-audit.md",
-    "queries/coding-agent-platform-readiness-audit.md",
-    "queries/coding-agent-maturity-model.md",
-    "queries/coding-agent-governance-checklist.md",
-    "queries/coding-agent-org-design-patterns.md"
+    "Untitled.base",
+    "queries/harness-engineering-system-map.md",
+    "raw/articles/viv-x-post-2039872562662941118-2026-04-14.md",
+    "queries/harness-engineering-7-day-study-plan.md",
+    "queries/extreme-harness-engineering.md",
+    "entities/symphony.md",
+    "entities/openai-frontier.md",
+    "raw/articles/openai-symphony-spec-2026-04-15.md",
+    "raw/articles/openai-frontier-overview-2026-04-15.md",
+    "raw/articles/latent-space-extreme-harness-engineering-2026-04-15.md",
+    "queries/what-nlah-rq2-rq3-actually-show.md",
+    "concepts/intelligent-harness-runtime.md"
   ]
 }

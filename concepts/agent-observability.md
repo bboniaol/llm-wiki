@@ -1,10 +1,10 @@
 ---
 title: Agent Observability
 created: 2026-04-14
-updated: 2026-04-14
+updated: 2026-04-16
 type: concept
 tags: [concept, observability, tooling, reliability, workflow, harness-engineering]
-sources: [raw/articles/openai-harness-engineering-2026-04-14.md, raw/articles/cursor-docs-cloud-agent-capabilities-2026-04-14.md, raw/articles/cursor-docs-enterprise-compliance-monitoring-2026-04-14.md]
+sources: [raw/articles/openai-harness-engineering-2026-04-14.md, raw/articles/cursor-docs-cloud-agent-capabilities-2026-04-14.md, raw/articles/cursor-docs-enterprise-compliance-monitoring-2026-04-14.md, raw/articles/langchain-x-post-2044429013301485916-2026-04-16.md, raw/articles/langchain-agent-improvement-loop-2026-04-16.md, raw/articles/cognition-swe-check-10x-faster-2026-04-16.md, raw/articles/braintrust-score-production-traces-2026-04-16.md, raw/articles/langfuse-evaluation-overview-2026-04-16.md, raw/articles/phoenix-evaluation-overview-2026-04-16.md]
 ---
 
 # Agent Observability
@@ -14,6 +14,16 @@ agent observability 指围绕智能体执行过程建立可观测能力，使系
 
 ## 在文章中的体现
 [[openai]] 的案例明确展示了这一点：他们把日志、指标和追踪接入本地可观测性堆栈，并让 [[codex]] 自己查询这些信号。Cursor 的 cloud agent 文档则补了另一个现实面：在后台 agent 场景里，可观测性不仅是调试信号，还包括 screenshots、videos、log references、audit logs 和 hooks 输出，否则团队根本不知道后台代理到底做了什么。
+
+## 新增信号：observability 正在变成数据供给层
+LangChain 这条新线索把 observability 的角色说得更重：trace 不只是为了排障，而是 improvement loop 的起点。在线 evaluators、annotation queues、insights clustering 和 offline datasets 都建立在 traces 之上。Cognition 的 SWE-check 又补了一层——如果 dogfooding 反馈会倒逼团队增加 tracing / lookup tools，那么 observability 实际上也在参与训练和产品对齐。
+
+新补的 Braintrust、Langfuse、Phoenix 资料则把这个趋势产品化了：
+- Braintrust 直接把 production traces 自动打分，并把结果挂回 trace / span；
+- Langfuse 明确把 live evaluator 绑定到 live traces；
+- Phoenix 甚至把 evaluator 自己纳入 OpenTelemetry tracing，连 judge 的输入、prompt、reasoning、score 与 timing 都可追。
+
+这意味着 [[agent-observability]] 已经不只是“让人看见 agent 做了什么”，而是“为在线 eval、evaluator 审计和持续回归监控提供原材料”。更完整的阶段性归纳见 [[from-offline-benchmark-to-online-evals]]。
 
 ## 为什么它是工程层核心能力
 - 没有可观测性，智能体无法定位复杂故障，只能盲改。
@@ -54,3 +64,6 @@ agent observability 指围绕智能体执行过程建立可观测能力，使系
 - [[openai-harness-engineering-2026-04-14]]
 - [[cursor-docs-cloud-agent-capabilities-2026-04-14]]
 - [[cursor-docs-enterprise-compliance-monitoring-2026-04-14]]
+- [[langchain-x-post-2044429013301485916-2026-04-16|langchain-x-post-2044429013301485916]]
+- [[langchain-agent-improvement-loop-2026-04-16]]
+- [[cognition-swe-check-10x-faster-2026-04-16]]

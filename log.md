@@ -488,3 +488,48 @@
 ## [2026-04-15] query | Harness Engineering 7-Day Study Plan
 - Filed: queries/harness-engineering-7-day-study-plan.md
 - Updated: index.md
+
+
+## [2026-04-16] ingest | X signals for harness engineering (Cursor / Cognition / LangChain)
+- Source URL: https://x.com/cursor_ai/status/2044136953239740909
+- Source URL: https://x.com/cognition/status/2044174496312242544
+- Source URL: https://cognition.ai/blog/swe-check-10x-faster
+- Source URL: https://x.com/LangChain/status/2044429013301485916
+- Source URL: https://www.langchain.com/conceptual-guides/traces-start-agent-improvement-loop
+- Raw source saved: raw/articles/cursor-x-post-2044136953239740909-2026-04-16.md
+- Raw source saved: raw/articles/cognition-x-post-2044174496312242544-2026-04-16.md
+- Raw source saved: raw/articles/cognition-swe-check-10x-faster-2026-04-16.md
+- Raw source saved: raw/articles/langchain-x-post-2044429013301485916-2026-04-16.md
+- Raw source saved: raw/articles/langchain-agent-improvement-loop-2026-04-16.md
+- Created: entities/cognition.md
+- Created: queries/harness-engineering-signals-2026-04-16.md
+- Updated: concepts/coding-agent-evals.md
+- Updated: concepts/agent-feedback-loops.md
+- Updated: concepts/agent-observability.md
+- Updated: entities/langchain.md
+- Updated: entities/cursor.md
+- Updated: index.md
+
+## [2026-04-16] query | Harness Engineering Signals (2026-04-16)
+- Filed: queries/harness-engineering-signals-2026-04-16.md
+- Updated: index.md
+
+## [2026-04-16] ingest | From offline benchmark to online evals
+- Source URL: https://docs.langchain.com/langsmith/evaluation
+- Source URL: https://www.braintrust.dev/docs/evaluate/score-online
+- Source URL: https://langfuse.com/docs/evaluation/overview
+- Source URL: https://arize.com/docs/phoenix/evaluation/llm-evals
+- Source URL: https://docs.coderabbit.ai/
+- Source URL: https://www.meticulous.ai/
+- Raw source saved: raw/articles/langsmith-evaluation-overview-2026-04-16.md
+- Raw source saved: raw/articles/braintrust-score-production-traces-2026-04-16.md
+- Raw source saved: raw/articles/langfuse-evaluation-overview-2026-04-16.md
+- Raw source saved: raw/articles/phoenix-evaluation-overview-2026-04-16.md
+- Raw source saved: raw/articles/coderabbit-docs-overview-2026-04-16.md
+- Raw source saved: raw/articles/meticulous-product-overview-2026-04-16.md
+- Filed: queries/from-offline-benchmark-to-online-evals.md
+- Updated: concepts/coding-agent-evals.md
+- Updated: concepts/agent-feedback-loops.md
+- Updated: concepts/agent-observability.md
+- Updated: concepts/evaluator-driven-qa.md
+- Updated: index.md

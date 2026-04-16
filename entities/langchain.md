@@ -1,10 +1,10 @@
 ---
 title: LangChain
 created: 2026-04-14
-updated: 2026-04-15
+updated: 2026-04-16
 type: entity
 tags: [company, open-source, harness-engineering, agentic-engineering]
-sources: [raw/articles/langchain-anatomy-of-an-agent-harness-2026-04-14.md, raw/articles/langchain-deepagents-overview-2026-04-14.md, raw/articles/harrison-chase-x-post-2042978500567609738-2026-04-15.md]
+sources: [raw/articles/langchain-anatomy-of-an-agent-harness-2026-04-14.md, raw/articles/langchain-deepagents-overview-2026-04-14.md, raw/articles/harrison-chase-x-post-2042978500567609738-2026-04-15.md, raw/articles/langchain-x-post-2044429013301485916-2026-04-16.md, raw/articles/langchain-agent-improvement-loop-2026-04-16.md]
 ---
 
 # LangChain
@@ -20,6 +20,7 @@ LangChain 是构建 LLM 应用、agent runtime 与相关工程基础设施的公
 - deepagents overview 进一步说明，LangChain 想把 planning、subagents、filesystem、sandbox、permissions、memory、human approval 这些能力做成默认组合的 runtime，而不是让用户从零拼。
 - 更进一步，deepagents 还把 backend 明确做成可插拔抽象，说明 LangChain 在思考的不是“如何给一个 agent 加功能”，而是“如何给 agent 提供可迁移的运行面”。
 - Harrison Chase 2026-04-15 的帖子把这条路线从“工程抽象”升级成了“平台立场”：LangChain 不只是主张 harness 必然存在，还明确主张 memory ownership 应该留在开放 harness 一侧，否则 agent 体验的核心资产会被 provider API 吞掉。
+- 2026-04-16 的 traces/improvement loop guide 又把 LangChain 的另一条产品立场压实了：对它来说，trace 不是 observability 附件，而是 agent 改进系统的起点。annotation queues、online evaluators、insights clustering、offline datasets 和 CI gate 被收成同一条闭环，这让 LangChain 从“解释 harness”更进一步变成“解释 harness 如何持续进化”。
 
 ## 在知识库中的位置
 如果说 [[openai]] 提供了真实产品闭环案例，Anthropic 提供了长任务与 context/memory 方法论，那么 LangChain 这条线的价值更像“概念统一器 + 运行时实现者”：它既把 harness 的边界、组成和未来演化讲得抽象，又用 [[deepagents]] 把这些抽象落到可实现的 SDK / CLI 上。
@@ -35,3 +36,5 @@ LangChain 是构建 LLM 应用、agent runtime 与相关工程基础设施的公
 - [[langchain-anatomy-of-an-agent-harness-2026-04-14]]
 - [[langchain-deepagents-overview-2026-04-14]]
 - [[harrison-chase-x-post-2042978500567609738-2026-04-15]]
+- [[langchain-x-post-2044429013301485916-2026-04-16|langchain-x-post-2044429013301485916]]
+- [[langchain-agent-improvement-loop-2026-04-16]]

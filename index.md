@@ -2,7 +2,7 @@
 
 > AI 圈 Harness Engineering 学习知识库索引。
 > 每个页面按类型登记，并附一行摘要。
-> Last updated: 2026-04-15 | Total pages: 72
+> Last updated: 2026-04-16 | Total pages: 75
 
 ## Entities
 <!-- Alphabetical within section -->
@@ -11,6 +11,7 @@
 - [[claude-code]] — Anthropic 的 agentic coding tool，已出现 initializer/coding 与 planner/generator/evaluator 两类 harness 角色结构。
 - [[claude-managed-agents]] — Anthropic 的托管 agent runtime / API 形态，已有客户采用案例，也已出现 public beta 与 managed harness 架构信号。
 - [[codex]] — OpenAI 在文中使用的核心 coding agent，负责代码、测试、文档、审查与验证闭环。
+- [[cognition]] — 通过 SWE-check 这条 specialized checker model 信号，展示把 bug detection / eval 能力产品化并挂到 coding harness 内部的一条路线。
 - [[crewai]] — 同时拥有 framework 与 harness 叙事，但公开主张 harness 也会快速 commodity 化的一条 agent 平台路线。
 - [[cursor]] — 带本地控制面、browser tools、cloud agents 和 enterprise controls 的 agent 平台。
 - [[deepagents]] — LangChain 基于 LangGraph 构建的 harness SDK / CLI，内置 planning、filesystem、subagents、memory、permissions 和 HITL。
@@ -75,9 +76,11 @@
 - [[cursor-platform-readiness-audit]] — 基于当前公开 docs 与 Money Forward 案例，审 Cursor 是否真的已经进入平台 readiness 阶段。
 - [[deepagents-platform-readiness-audit]] — 基于公开实现与 harness 抽象资料，审 Deep Agents 作为开放平台骨架是否已经 readiness 过线。
 - [[extreme-harness-engineering]] — 把 OpenAI Frontier / Symphony / dark factory 这条极端 agent org 线压成一页运行面分析。
+- [[from-offline-benchmark-to-online-evals]] — 把 online scoring、live evaluator、PR checker 与 browser regression checker 收成一张“离线评测如何演成常驻质量层”的地图。
 - [[from-local-coding-agent-to-team-agent-platform]] — 把个人本地 coding agent 演进到团队级 agent 平台的路径压成六阶段路线图。
 - [[harness-engineering-7-day-study-plan]] — 按工作日 2 小时、周末加量的节奏，把 harness engineering 学成一周可执行的系统学习路线。
 - [[harness-engineering-system-map]] — 把当前知识库里的 harness engineering 组件串成一张八层思维导图与系统学习地图。
+- [[harness-engineering-signals-2026-04-16]] — 汇总最近 7 天最值得保留的三条 X 信号，并给出 trace/eval/checker/runtime 四层判断。
 - [[how-to-read-agent-harness-benchmarks]] — 总结读 harness benchmark 时该优先看哪些结构信号，而不是只盯单个高分。
 - [[managed-harness-vs-open-harness]] — 从运行面、控制权、组织治理与 lock-in 风险四个角度，判断托管 harness 和开放 harness 各适合什么阶段。
 - [[minimum-viable-agent-harness-checklist]] — 把 Anthropic / Letta / Karan 这三条线压成一张最小可落地的 agent harness 清单。
