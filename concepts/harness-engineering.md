@@ -1,10 +1,10 @@
 ---
 title: Harness Engineering
 created: 2026-04-14
-updated: 2026-04-15
+updated: 2026-04-19
 type: concept
 tags: [concept, harness-engineering, agentic-engineering, workflow, reliability, observability]
-sources: [raw/articles/openai-harness-engineering-2026-04-14.md, raw/articles/anthropic-effective-harnesses-long-running-agents-2026-04-14.md, raw/articles/anthropic-harness-design-long-running-apps-2026-04-14.md, raw/articles/langchain-anatomy-of-an-agent-harness-2026-04-14.md, raw/articles/humanlayer-skill-issue-harness-engineering-2026-04-14.md, raw/articles/humanlayer-writing-a-good-claude-md-2026-04-14.md, raw/articles/humanlayer-advanced-context-engineering-2026-04-14.md, raw/articles/humanlayer-context-efficient-backpressure-2026-04-14.md, raw/articles/inngest-harness-not-framework-2026-04-14.md, raw/articles/wolfbench-hermes-agent-x-post-2026-04-14.md, raw/articles/harrison-chase-x-post-2042612328701812789-2026-04-14.md, raw/articles/rohit-x-post-2041548810804211936-2026-04-14.md, raw/articles/viv-x-post-2041927488918413589-2026-04-14.md, raw/articles/sarah-wooders-x-post-2040121230473457921-2026-04-15.md, raw/articles/joao-moura-x-post-2043726271449112776-2026-04-15.md, raw/articles/karan-x-post-2043618895328932340-2026-04-15.md, raw/articles/nlah-arxiv-html-2603-25723-2026-04-15.md]
+sources: [raw/articles/openai-harness-engineering-2026-04-14.md, raw/articles/anthropic-effective-harnesses-long-running-agents-2026-04-14.md, raw/articles/anthropic-harness-design-long-running-apps-2026-04-14.md, raw/articles/langchain-anatomy-of-an-agent-harness-2026-04-14.md, raw/articles/humanlayer-skill-issue-harness-engineering-2026-04-14.md, raw/articles/humanlayer-writing-a-good-claude-md-2026-04-14.md, raw/articles/humanlayer-advanced-context-engineering-2026-04-14.md, raw/articles/humanlayer-context-efficient-backpressure-2026-04-14.md, raw/articles/inngest-harness-not-framework-2026-04-14.md, raw/articles/wolfbench-hermes-agent-x-post-2026-04-14.md, raw/articles/harrison-chase-x-post-2042612328701812789-2026-04-14.md, raw/articles/rohit-x-post-2041548810804211936-2026-04-14.md, raw/articles/viv-x-post-2041927488918413589-2026-04-14.md, raw/articles/sarah-wooders-x-post-2040121230473457921-2026-04-15.md, raw/articles/joao-moura-x-post-2043726271449112776-2026-04-15.md, raw/articles/karan-x-post-2043618895328932340-2026-04-15.md, raw/articles/nlah-arxiv-html-2603-25723-2026-04-15.md, raw/articles/langchain-agent-improvement-loop-2026-04-16.md, raw/articles/cognition-swe-check-10x-faster-2026-04-16.md, raw/articles/cursor-x-post-2044136953239740909-2026-04-16.md, raw/articles/langchain-x-post-2044429013301485916-2026-04-16.md]
 ---
 
 # Harness Engineering
@@ -39,6 +39,7 @@ sources: [raw/articles/openai-harness-engineering-2026-04-14.md, raw/articles/an
 - 当任务存在明显的自评偏差时，harness 还需要单独的 evaluator、评分标准和验收阈值，而不是让生成 agent 自己给自己打分。
 - 从 LangChain 的拆法看，hooks/middleware 也属于 harness 核心：compaction、continuation、lint checks、tool-output offloading 这些都不是细枝末节，而是决定 agent 能不能长期稳定工作的执行逻辑。
 - HumanLayer 则把这些抽象组件拉回实战：好 harness 不是把所有规则和工具一次性塞给模型，而是围绕 instruction budget 做 [[progressive-disclosure]]；好 sub-agent 不是为了“多 agent 看起来高级”，而是为了建立 context firewall，控制上下文污染、成本和信息回流粒度。
+- 2026-04-16 这批新信号又把另一层边界压实：成熟 harness 不只是执行系统，也包含一条持续改进层。[[langchain]] 把 traces、online evaluators、annotation queues、offline datasets 与 CI gate 连成闭环；[[cognition]] 则把 specialized checker 直接做成产品内常驻角色；[[cursor]] 这类执行面信号则说明 execution frontier 仍在外扩。
 - Karan 的实现帖又补了一张偏工程清单式的落地面：critic-in-loop、SQLite/Redis 持久 history、session continuity、guardrails、memory compaction、repo snapshot 注入、以及 `.md` files 作为 agent brain。这说明很多团队口中的 harness，现实里就是一组可直接拼装的系统设计件。
 - HumanLayer 的配套文章则进一步把 harness 细化成三类高杠杆工法：短小高信号的 `CLAUDE.md` / `AGENTS.md`、frequent intentional compaction，以及 deterministic back-pressure。
 
@@ -58,6 +59,9 @@ sources: [raw/articles/openai-harness-engineering-2026-04-14.md, raw/articles/an
 13. 如果连 memory 都被重新解释成 context management，那么 harness 很可能不是临时过渡层，而是 agent 系统里相对稳定的抽象边界。
 14. 对 production agent，permissions、compaction、retries、sub-agent isolation 这些基础设施机制，本身就是 harness，而不是“实现细节”。
 15. 但如果 João Moura 这条判断成立，那么 harness 即便重要，也未必是长期最可防御的产品层；长期价值可能会进一步上移到 [[entangled-software]] 所强调的 adaptation、trust 与 proprietary usage flywheel。
+16. 最近一周的新证据说明，harness 可以先粗分成 execution layer 与 improvement layer：前者负责任务执行与工作流推进，后者负责 traces、evals、annotations、checker 与 regression gate。
+17. 因而判断一个 harness 是否成熟，不能只看它会不会跑任务，还要看它有没有把持续观察、评分、标注和防回退做成常驻运行部件。
+18. 2026-04-19 的二阶判断把这点再压实了一次：X 上 exact phrase 信号并不密集，但 trace/eval/checker/runtime 这些相邻线索正在合流，说明 harness engineering 的核心边界正在从“agent 执行环境”扩展为“agent 执行 + agent 改进”的复合系统。
 
 ## 与相近概念的关系
 - WolfBench 这条 benchmark 信号说明，[[harness-engineering]] 不只是方法论，也开始成为可以被第三方 benchmark 直接比较的对象。
@@ -69,6 +73,7 @@ sources: [raw/articles/openai-harness-engineering-2026-04-14.md, raw/articles/an
 - [[multi-agent-delegation]] 在这里更多体现为角色化分工，而不是单纯并行提速。
 - [[humanlayer]] 的说法看，[[harness-engineering]] 也可以被理解为 [[context-engineering]] 在 coding agent 配置面上的具体落点。
 - [[natural-language-agent-harnesses]] 则提供了一个更研究化的延伸：把 harness pattern 直接外化成可执行文本对象，在 shared runtime 下做迁移与消融。
+- [[harness-engineering-signals-2026-04-19]] 是最近 7 天社交/外链信号的阶段性二阶判断。
 
 ## 未决问题
 - 这种做法在别的团队、别的仓库结构上能复制到什么程度？
@@ -91,3 +96,7 @@ sources: [raw/articles/openai-harness-engineering-2026-04-14.md, raw/articles/an
 - [[joao-moura-x-post-2043726271449112776-2026-04-15]]
 - [[karan-x-post-2043618895328932340-2026-04-15]]
 - [[nlah-arxiv-html-2603-25723-2026-04-15]]
+- [[langchain-agent-improvement-loop-2026-04-16]]
+- [[cognition-swe-check-10x-faster-2026-04-16]]
+- [[langchain-x-post-2044429013301485916-2026-04-16|langchain-x-post-2044429013301485916]]
+- [[cursor-x-post-2044136953239740909-2026-04-16|cursor-x-post-2044136953239740909]]

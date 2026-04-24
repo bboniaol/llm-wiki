@@ -1,7 +1,7 @@
 ---
 title: Cognition
 created: 2026-04-16
-updated: 2026-04-16
+updated: 2026-04-18
 type: entity
 tags: [company, product, coding-agent, evaluation, harness-engineering]
 sources: [raw/articles/cognition-x-post-2044174496312242544-2026-04-16.md, raw/articles/cognition-swe-check-10x-faster-2026-04-16.md]
@@ -19,6 +19,7 @@ sources: [raw/articles/cognition-x-post-2044174496312242544-2026-04-16.md, raw/a
 - 这说明 [[coding-agent-evals]] 不一定只是一张 benchmark 榜单；在产品里，它也可以沉成始终在线的检查器、评分器、bug hunter，成为 [[agent-feedback-loops]] 的常驻部件。
 
 ## 为什么对 harness engineering 重要
+- 到 2026-04-18 回看，这条信号的重要性更清楚：SWE-check 不只是一个亮眼 demo，而是说明 checker 已经开始从“离线 benchmark 附属物”变成 harness 里的常驻质量层。
 - 它把“更强的通用 agent”替换成了“更便宜的专用 evaluator / checker”这条路线，说明很多可靠性增益可能来自 harness 内的角色专业化，而不是只靠主代理更聪明。
 - 它把训练目标直接绑到真实产品工作流，强化了一个趋势：好的 harness 不只消费 eval，它还会反向塑造训练数据、奖励函数和工具暴露方式。
 - 文中反复提到 dogfooding 反馈会倒逼新 tracing / lookup 工具进入 agent，这也说明 [[agent-observability]] 和工具面不是事后附属，而是训练闭环的一部分。
@@ -27,6 +28,8 @@ sources: [raw/articles/cognition-x-post-2044174496312242544-2026-04-16.md, raw/a
 - [[coding-agent-evals]] 提供“怎么测”和“测什么”的框架。
 - [[agent-feedback-loops]] 解释为什么 specialized checker 会成为在线闭环的一部分。
 - [[harness-engineering]] 则给出更大的系统边界：SWE-check 说明 harness 竞争正在往“谁能把 trace、eval、checker、tooling 和训练回路接起来”演进。
+- [[from-offline-benchmark-to-online-evals]] 把它放进“online eval / specialized checker 常驻层”的更大地图里。
+- [[harness-engineering-signals-2026-04-18]] 则把它与 LangChain traces loop、Cursor 执行面信号放到同一个近 7 天窗口中比较。
 
 ## 来源
 - [[cognition-x-post-2044174496312242544-2026-04-16|cognition-x-post-2044174496312242544]]

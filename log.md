@@ -533,3 +533,25 @@
 - Updated: concepts/agent-observability.md
 - Updated: concepts/evaluator-driven-qa.md
 - Updated: index.md
+
+## [2026-04-18] query | Harness Engineering Signals (2026-04-18)
+- Filed: queries/harness-engineering-signals-2026-04-18.md
+- Updated: concepts/harness-engineering.md
+- Updated: entities/cognition.md
+- Updated: index.md
+## [2026-04-19] query | Harness Engineering Signals (2026-04-19)
+- Official x-cli preflight failed: Missing env var X_API_KEY; used existing recovered X/raw-source signals in /Users/gaara/wiki rather than write-capable API.
+- Filed: queries/harness-engineering-signals-2026-04-19.md
+- Updated: entities/langchain.md
+- Updated: concepts/harness-engineering.md
+- Updated: index.md
+- Raw sources reused: raw/articles/langchain-x-post-2044429013301485916-2026-04-16.md, raw/articles/langchain-agent-improvement-loop-2026-04-16.md, raw/articles/cognition-x-post-2044174496312242544-2026-04-16.md, raw/articles/cognition-swe-check-10x-faster-2026-04-16.md, raw/articles/cursor-x-post-2044136953239740909-2026-04-16.md
+
+## [2026-04-24] ingest | Anthropic Eric: Vibe Coding 生产环境安全策略
+- Source: X video post by @billtheinvestor (https://x.com/billtheinvestor/status/2046269200520577262)
+- Video: 31 min, Anthropic Coding Agents 研究负责人 Eric 演讲
+- Raw saved: /tmp/vibe_coding_anthropic.mp4 + /tmp/vibe_coding_anthropic.txt (transcript via Whisper)
+- Created: concepts/vibe-coding-production-safety.md (7 sections, 200+ lines)
+- Updated: index.md (total pages: 78)
+- Key concepts: 叶节点/核心架构分层、可验证性设计、TDD 技巧、Claude Code + Cursor 组合、指数增长论
+
