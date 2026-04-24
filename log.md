@@ -575,11 +575,13 @@
 - Updated: index.md (total pages: 80)
 - Key contribution: 9 production decisions (tool preprocessing, deterministic validation, DAG execution, plan quality, state storage, boundary validation, Sprint Contract, implementation priority, dynamic tool selection) + 5 common anti-patterns
 
-## [2026-04-24] ingest | 李韭二: LLM是电 — Harness Engineering心智模型
-- Source URL: https://x.com/li9292/status/2042138247208513693
-- X post blocked without login; ingested via browser extraction
-- Raw saved: raw/articles/lijiuer-harness-electricity-analogy-2026-04-09.md
-- Updated: concepts/harness-engineering.md (added "LLM是电"心智模型: 马vs电、3个比喻问题、OS比喻、电力产业三层对应、历史警告)
-- Updated: comparisons/framework-vs-runtime-vs-harness.md (added 比喻视角补充: 电力产业/计算机三层映射)
-- Updated: index.md (total pages: 80)
-- Key contribution: 心智模型层的重要补充 — 从"控制论"(马)转向"基础设施论"(电)，解释了为什么 harness 不会消失、为什么不是套壳、为什么 Harness Engineering 是学科而非产物
+## [2026-04-24] ingest | Lance Martin: Launching Claude Managed Agents
+- Source URL: https://x.com/RLanceMartin/status/2041927992986009773
+- X post blocked without login; ingested via browser extraction + r.jina.ai fallback
+- Raw saved: raw/articles/lance-martin-claude-managed-agents-2026-04-09.md
+- Created: entities/lance-martin.md (Anthropic engineer, main driver of Claude Managed Agents)
+- Created: entities/claude-managed-agents.md (managed harness product page: brain/hands/session decoupling, 3 core concepts, 4 usage patterns, SDK/CLI/skills onboarding)
+- Updated: concepts/harness-engineering.md (added [[claude-managed-agents]] link as validation of "harness thins but doesn't disappear")
+- Updated: comparisons/framework-vs-runtime-vs-harness.md (added "托管模式"比喻行: template config / managed infra / managed harness with 3-body separation)
+- Updated: index.md (total pages: 82)
+- Key contribution: first major "managed harness" product signal — validates that harness engineering is moving toward "thinner harness + heavier infrastructure" rather than "no harness"

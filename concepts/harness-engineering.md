@@ -75,6 +75,7 @@ sources: [raw/articles/openai-harness-engineering-2026-04-14.md, raw/articles/an
 - [[natural-language-agent-harnesses]] 则提供了一个更研究化的延伸：把 harness pattern 直接外化成可执行文本对象，在 shared runtime 下做迁移与消融。
 - [[harness-engineering-signals-2026-04-19]] 是最近 7 天社交/外链信号的阶段性二阶判断。
 - [[harness-engineering-faq-companion]] 把 Lychee FAQ 的 9 个生产决策 + 5 反模式 + 实现优先级收敛成一张判断地图。
+- [[claude-managed-agents]] — Anthropic 的托管 harness 实例，验证了"harness 会变薄但不会消失"：不是拆掉 harness，而是把 harness + 基础设施托管起来
 
 ## Lychee Technology 的 7 层框架补充
 [[lychee-technology]] 的博客文章提供了一个更结构化的 harness 分层视角，与当前知识库中分散的线索形成互补：
