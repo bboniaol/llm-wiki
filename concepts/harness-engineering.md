@@ -4,7 +4,7 @@ created: 2026-04-14
 updated: 2026-04-24
 type: concept
 tags: [concept, harness-engineering, agentic-engineering, workflow, reliability, observability]
-sources: [raw/articles/openai-harness-engineering-2026-04-14.md, raw/articles/anthropic-effective-harnesses-long-running-agents-2026-04-14.md, raw/articles/anthropic-harness-design-long-running-apps-2026-04-14.md, raw/articles/langchain-anatomy-of-an-agent-harness-2026-04-14.md, raw/articles/humanlayer-skill-issue-harness-engineering-2026-04-14.md, raw/articles/humanlayer-writing-a-good-claude-md-2026-04-14.md, raw/articles/humanlayer-advanced-context-engineering-2026-04-14.md, raw/articles/humanlayer-context-efficient-backpressure-2026-04-14.md, raw/articles/inngest-harness-not-framework-2026-04-14.md, raw/articles/wolfbench-hermes-agent-x-post-2026-04-14.md, raw/articles/harrison-chase-x-post-2042612328701812789-2026-04-14.md, raw/articles/rohit-x-post-2041548810804211936-2026-04-14.md, raw/articles/viv-x-post-2041927488918413589-2026-04-14.md, raw/articles/sarah-wooders-x-post-2040121230473457921-2026-04-15.md, raw/articles/joao-moura-x-post-2043726271449112776-2026-04-15.md, raw/articles/karan-x-post-2043618895328932340-2026-04-15.md, raw/articles/nlah-arxiv-html-2603-25723-2026-04-15.md, raw/articles/langchain-agent-improvement-loop-2026-04-16.md, raw/articles/cognition-swe-check-10x-faster-2026-04-16.md, raw/articles/cursor-x-post-2044136953239740909-2026-04-16.md, raw/articles/langchain-x-post-2044429013301485916-2026-04-16.md, raw/articles/ltbase-harness-engineering-2026-04-24.md, raw/articles/ltbase-harness-engineering-faq-2026-04-24.md]
+sources: [raw/articles/openai-harness-engineering-2026-04-14.md, raw/articles/anthropic-effective-harnesses-long-running-agents-2026-04-14.md, raw/articles/anthropic-harness-design-long-running-apps-2026-04-14.md, raw/articles/langchain-anatomy-of-an-agent-harness-2026-04-14.md, raw/articles/humanlayer-skill-issue-harness-engineering-2026-04-14.md, raw/articles/humanlayer-writing-a-good-claude-md-2026-04-14.md, raw/articles/humanlayer-advanced-context-engineering-2026-04-14.md, raw/articles/humanlayer-context-efficient-backpressure-2026-04-14.md, raw/articles/inngest-harness-not-framework-2026-04-14.md, raw/articles/wolfbench-hermes-agent-x-post-2026-04-14.md, raw/articles/harrison-chase-x-post-2042612328701812789-2026-04-14.md, raw/articles/rohit-x-post-2041548810804211936-2026-04-14.md, raw/articles/viv-x-post-2041927488918413589-2026-04-14.md, raw/articles/sarah-wooders-x-post-2040121230473457921-2026-04-15.md, raw/articles/joao-moura-x-post-2043726271449112776-2026-04-15.md, raw/articles/karan-x-post-2043618895328932340-2026-04-15.md, raw/articles/nlah-arxiv-html-2603-25723-2026-04-15.md, raw/articles/langchain-agent-improvement-loop-2026-04-16.md, raw/articles/cognition-swe-check-10x-faster-2026-04-16.md, raw/articles/cursor-x-post-2044136953239740909-2026-04-16.md, raw/articles/langchain-x-post-2044429013301485916-2026-04-16.md, raw/articles/ltbase-harness-engineering-2026-04-24.md, raw/articles/ltbase-harness-engineering-faq-2026-04-24.md, raw/articles/lijiuer-harness-electricity-analogy-2026-04-09.md]
 ---
 
 # Harness Engineering
@@ -119,6 +119,41 @@ Lychee 文章给出的 Day 1 起步建议非常务实：
 
 这与 [[minimum-viable-agent-harness-checklist]] 的结论基本一致，但把起点明确为"从 Layer 7 倒着建"。
 
+## 李韭二的"LLM 是电"心智模型补充
+[[lijiuer-harness-electricity-analogy-2026-04-09|李韭二]] 这篇长文从心智模型角度对 harness engineering 做了重要补充，提出了一个与"马"（控制论）完全不同的"电"（基础设施）类比：
+
+### 核心区分：马 vs 电
+| 心智模型 | 隐喻 | 工程导向 | 结果 |
+|---------|------|---------|------|
+| **马** | LLM 是一匹有力但不受控的动物 | 造马鞍、缰绳、甲胄 | 控制论思维 |
+| **电** | LLM 是一种通用能源 | 造变压器、输电网、电器 | 基础设施思维 |
+
+### 三个流行比喻的问题
+1. **Scaffold（脚手架）** — 暗示 harness 是过渡性的，会随模型增强而消失。反例：Anthropic 和 Manus 确实在移除复杂度，但移除的是复杂度而非 harness 本身。harness 会变薄，但不会被拆掉。
+2. **Wrapper（封装层）** — 暗示 harness 是薄薄一层，不如被包裹的模型重要。反例：Vercel 移除 80% 工具定义后成功率从 80%→100%，速度快 3.5 倍。如果 harness 只是包装，移除工具应该让性能变差。
+3. **Engine vs Car（引擎与汽车）** — 承认 harness 不是附属品，但品类单一性局限明显。LLM agent 跨越编程助手、客服、医疗诊断等完全不同的品类，更像是电力接不同电器，而非引擎装不同车。
+
+### 最精确的比喻：操作系统
+Beren Millidge 2023 年的文章提出：裸 LLM = 没有 OS 的 CPU，harness = 让它可用的操作系统。这个类比在**微观架构层面**最准确，但解释不了**宏观产业层面**的演化。
+
+### 电力类比的三层对应
+| 电力产业层 | Harness Engineering 对应 |
+|-----------|-------------------------|
+| 发电站 | 模型提供商（OpenAI/Anthropic/等） |
+| 输电网 | 模型 API / 基础设施 |
+| **电器** | **Agent Harness** — 将标准化 LLM 转化为特定场景价值的完整工程系统 |
+| **电气工程** | **Harness Engineering** — 制造电器的学科 |
+
+### 历史警告
+Dr. Philippa Hardman 指出：工厂只有在围绕电力重新设计之后才变得更高效，简单地把蒸汽引擎换成电动马达是不够的。
+
+今天的数据：McKinsey 2025 报告显示不到 10% 的企业 AI 应用能走过试点阶段；MIT 研究发现 95% 的生成式 AI 项目没有产生可量化的财务影响。企业以为"插上电就行"，但必须围绕新的能源形态重新设计整套系统。
+
+### 与现有知识的关联
+- 与 [[framework-vs-runtime-vs-harness]] 直接兼容 — "电"类比解释了为什么 framework ≠ harness
+- 与 [[entangled-software]] 形成互补 — João Moura 说 harness 会 commodity 化，李韭二说 harness 会变薄但不会消失，两者合起来看：变薄的是具体实现，不消失的是系统层需求
+- 与 [[harness-engineering-7-day-study-plan]] 兼容 — 电力类比提供了学习 harness 的宏观叙事框架
+
 ## 未决问题
 - 这种做法在别的团队、别的仓库结构上能复制到什么程度？
 - 随着模型能力增强，哪些约束会被放松，哪些反而必须更严格？
@@ -146,3 +181,4 @@ Lychee 文章给出的 Day 1 起步建议非常务实：
 - [[cursor-x-post-2044136953239740909-2026-04-16|cursor-x-post-2044136953239740909]]
 - [[ltbase-harness-engineering-2026-04-24|ltbase-harness-engineering]]
 - [[ltbase-harness-engineering-faq-2026-04-24|ltbase-harness-engineering-faq]]
+- [[lijiuer-harness-electricity-analogy-2026-04-09|lijiuer-harness-electricity-analogy]]

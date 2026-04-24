@@ -574,3 +574,12 @@
 - Updated: concepts/harness-engineering.md (added FAQ source + link)
 - Updated: index.md (total pages: 80)
 - Key contribution: 9 production decisions (tool preprocessing, deterministic validation, DAG execution, plan quality, state storage, boundary validation, Sprint Contract, implementation priority, dynamic tool selection) + 5 common anti-patterns
+
+## [2026-04-24] ingest | 李韭二: LLM是电 — Harness Engineering心智模型
+- Source URL: https://x.com/li9292/status/2042138247208513693
+- X post blocked without login; ingested via browser extraction
+- Raw saved: raw/articles/lijiuer-harness-electricity-analogy-2026-04-09.md
+- Updated: concepts/harness-engineering.md (added "LLM是电"心智模型: 马vs电、3个比喻问题、OS比喻、电力产业三层对应、历史警告)
+- Updated: comparisons/framework-vs-runtime-vs-harness.md (added 比喻视角补充: 电力产业/计算机三层映射)
+- Updated: index.md (total pages: 80)
+- Key contribution: 心智模型层的重要补充 — 从"控制论"(马)转向"基础设施论"(电)，解释了为什么 harness 不会消失、为什么不是套壳、为什么 Harness Engineering 是学科而非产物
