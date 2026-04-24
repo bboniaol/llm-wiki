@@ -555,3 +555,14 @@
 - Updated: index.md (total pages: 78)
 - Key concepts: 叶节点/核心架构分层、可验证性设计、TDD 技巧、Claude Code + Cursor 组合、指数增长论
 
+## [2026-04-24] ingest | Lychee Technology: Harness Engineering (7-Layer Stack)
+- Source URL: https://blog.ltbase.dev/posts/agents/harness-engineering
+- Direct fetch blocked (private network); ingested via browser extraction
+- Raw saved: raw/articles/ltbase-harness-engineering-2026-04-24.md
+- Created: entities/lychee-technology.md
+- Updated: concepts/harness-engineering.md (added 7-layer stack mapping, 4 design principles, 4 production traps, MVH recommendation)
+- Updated: concepts/agent-reliability-patterns.md (added 4 frontline traps: Context Anxiety, Self-Grading Illusion, Illusion of Correctness, Memory Consolidation Cycle)
+- Updated: concepts/coding-agent-workflow-patterns.md (added layered harness full agent run example)
+- Updated: index.md (total pages: 79)
+- Key contribution: structured 7-layer framework + 4 design principles + 4 production traps as complementary methodology to existing OpenAI/Anthropic/LangChain sources
+

@@ -2,7 +2,7 @@
 
 > AI 圈 Harness Engineering 学习知识库索引。
 > 每个页面按类型登记，并附一行摘要。
-> Last updated: 2026-04-24 | Total pages: 78
+> Last updated: 2026-04-24 | Total pages: 79
 
 ## Entities
 <!-- Alphabetical within section -->
@@ -19,7 +19,8 @@
 - [[hermes-agent]] — 当前以 WolfBench benchmark 信号进入知识库的 agentic harness 对象，表现亮点在于更高的可靠性下限。
 - [[humanlayer]] — 用实践导向文章系统化总结 agentfiles、skills、MCP、sub-agents、hooks 与 back-pressure 的团队/公司。
 - [[inngest]] — 用 event-driven durable workflow infrastructure 重新解释 harness 与 framework 边界的编排平台。
-- [[langchain]] — 通过 “Agent = Model + Harness” 明确拆解 harness 边界与核心 primitive 的生态/公司。
+- [[lychee-technology]] — 发布 7 层 harness stack 与 4 个生产陷阱框架的工程博客主体，同时开发 Forma 等产品。
+- [[langchain]] — 通过 "Agent = Model + Harness" 明确拆解 harness 边界与核心 primitive 的生态/公司。
 - [[letta]] — 把 memory-first coding harness、git-backed memory filesystem 与 Context Constitution 收束成一条 experiential AI 路线的公司。
 - [[money-forward]] — Cursor 的跨 engineering / QA / product / design adoption 公开案例主体。
 - [[openai]] — 通过真实产品实践验证 harness engineering 的组织与方法论主体。

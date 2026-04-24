@@ -1,10 +1,10 @@
 ---
 title: Harness Engineering
 created: 2026-04-14
-updated: 2026-04-19
+updated: 2026-04-24
 type: concept
 tags: [concept, harness-engineering, agentic-engineering, workflow, reliability, observability]
-sources: [raw/articles/openai-harness-engineering-2026-04-14.md, raw/articles/anthropic-effective-harnesses-long-running-agents-2026-04-14.md, raw/articles/anthropic-harness-design-long-running-apps-2026-04-14.md, raw/articles/langchain-anatomy-of-an-agent-harness-2026-04-14.md, raw/articles/humanlayer-skill-issue-harness-engineering-2026-04-14.md, raw/articles/humanlayer-writing-a-good-claude-md-2026-04-14.md, raw/articles/humanlayer-advanced-context-engineering-2026-04-14.md, raw/articles/humanlayer-context-efficient-backpressure-2026-04-14.md, raw/articles/inngest-harness-not-framework-2026-04-14.md, raw/articles/wolfbench-hermes-agent-x-post-2026-04-14.md, raw/articles/harrison-chase-x-post-2042612328701812789-2026-04-14.md, raw/articles/rohit-x-post-2041548810804211936-2026-04-14.md, raw/articles/viv-x-post-2041927488918413589-2026-04-14.md, raw/articles/sarah-wooders-x-post-2040121230473457921-2026-04-15.md, raw/articles/joao-moura-x-post-2043726271449112776-2026-04-15.md, raw/articles/karan-x-post-2043618895328932340-2026-04-15.md, raw/articles/nlah-arxiv-html-2603-25723-2026-04-15.md, raw/articles/langchain-agent-improvement-loop-2026-04-16.md, raw/articles/cognition-swe-check-10x-faster-2026-04-16.md, raw/articles/cursor-x-post-2044136953239740909-2026-04-16.md, raw/articles/langchain-x-post-2044429013301485916-2026-04-16.md]
+sources: [raw/articles/openai-harness-engineering-2026-04-14.md, raw/articles/anthropic-effective-harnesses-long-running-agents-2026-04-14.md, raw/articles/anthropic-harness-design-long-running-apps-2026-04-14.md, raw/articles/langchain-anatomy-of-an-agent-harness-2026-04-14.md, raw/articles/humanlayer-skill-issue-harness-engineering-2026-04-14.md, raw/articles/humanlayer-writing-a-good-claude-md-2026-04-14.md, raw/articles/humanlayer-advanced-context-engineering-2026-04-14.md, raw/articles/humanlayer-context-efficient-backpressure-2026-04-14.md, raw/articles/inngest-harness-not-framework-2026-04-14.md, raw/articles/wolfbench-hermes-agent-x-post-2026-04-14.md, raw/articles/harrison-chase-x-post-2042612328701812789-2026-04-14.md, raw/articles/rohit-x-post-2041548810804211936-2026-04-14.md, raw/articles/viv-x-post-2041927488918413589-2026-04-14.md, raw/articles/sarah-wooders-x-post-2040121230473457921-2026-04-15.md, raw/articles/joao-moura-x-post-2043726271449112776-2026-04-15.md, raw/articles/karan-x-post-2043618895328932340-2026-04-15.md, raw/articles/nlah-arxiv-html-2603-25723-2026-04-15.md, raw/articles/langchain-agent-improvement-loop-2026-04-16.md, raw/articles/cognition-swe-check-10x-faster-2026-04-16.md, raw/articles/cursor-x-post-2044136953239740909-2026-04-16.md, raw/articles/langchain-x-post-2044429013301485916-2026-04-16.md, raw/articles/ltbase-harness-engineering-2026-04-24.md]
 ---
 
 # Harness Engineering
@@ -75,6 +75,49 @@ sources: [raw/articles/openai-harness-engineering-2026-04-14.md, raw/articles/an
 - [[natural-language-agent-harnesses]] 则提供了一个更研究化的延伸：把 harness pattern 直接外化成可执行文本对象，在 shared runtime 下做迁移与消融。
 - [[harness-engineering-signals-2026-04-19]] 是最近 7 天社交/外链信号的阶段性二阶判断。
 
+## Lychee Technology 的 7 层框架补充
+[[lychee-technology]] 的博客文章提供了一个更结构化的 harness 分层视角，与当前知识库中分散的线索形成互补：
+
+### 7-Layer Harness Stack
+| 层 | 名称 | 当前知识库中的对应 |
+|----|------|------------------|
+| 1 | **Cognition** | [[context-engineering]] + [[progressive-disclosure]] |
+| 2 | **Tools** | Tool middleware、ranking、dedup、token budget truncation |
+| 3 | **Contracts & Interfaces** | Schema validation、type safety、API spec |
+| 4 | **Orchestration** | [[coding-agent-workflow-patterns]]、DAG / state machine |
+| 5 | **Memory & State** | [[agent-memory-patterns]]、[[long-running-agent-tasks]] |
+| 6 | **Evaluation & Observation** | [[coding-agent-evals]]、[[agent-observability]] |
+| 7 | **Constraints & Recovery** | [[agent-reliability-patterns]]、idempotency、retry |
+
+这个分层的好处是：**每一层都有明确的职责边界**，而不是把所有东西混在 "harness" 一个大词里。
+
+### 4 设计原则
+Lychee 文章把 harness 设计收敛成 4 条可测试原则：
+1. **Constrain, don't instruct** — 能用程序限制就不用 prompt 劝说。
+2. **Externalize state** — 关键信息必须落在 context window 外面。
+3. **Make every step verifiable** — 每层输出都能被非生成方验证。
+4. **Fail locally, not globally** — 单步失败只触发单步重试，不重启整条管线。
+
+这 4 条原则与当前知识库中的 [[agent-reliability-patterns]]、[[minimum-viable-agent-harness-checklist]] 直接兼容，但表达更紧凑。
+
+### 4 生产陷阱（Frontline Lessons）
+Lychee 文章从长时间运行实践中提炼出 4 个高阶陷阱：
+- **Context Anxiety**：token 占用超过 70% 时模型开始跳过步骤或提前收尾。Fix = Context Reset（保存状态→终止实例→启动新 agent）。
+- **Self-Grading Illusion**：让模型自评会导致系统性高估。Fix = Sprint Contract（Generator + 独立 Evaluator，Evaluator 必须执行验证且不能看到 Generator 的推理链）。
+- **Illusion of Correctness**：在矛盾约束下模型会优化"看起来对"而不是"实际对"。Fix = 反馈必须客观（给编译错误、断言失败、schema mismatch），不能带情绪。
+- **Memory Consolidation Cycle**：长期运行后 memory log 膨胀且自相矛盾。Fix = 后台自动压缩日志，去重、消解矛盾、写回 clean state file（有案例把 32K token 压到 7K）。
+
+这些陷阱和修复方法可以直接归入 [[agent-reliability-patterns]] 和 [[long-running-agent-tasks]]。
+
+### Minimum Viable Harness 建议
+Lychee 文章给出的 Day 1 起步建议非常务实：
+- `state.json` — 结构化任务状态跟踪
+- Retry wrapper — 每个 tool call 至少一次自动重试 + 指数退避
+- Schema validator — 每个 LLM 输出先过 JSON schema 验证
+- Tool output truncation — 硬限制 tool payload token 预算
+
+这与 [[minimum-viable-agent-harness-checklist]] 的结论基本一致，但把起点明确为"从 Layer 7 倒着建"。
+
 ## 未决问题
 - 这种做法在别的团队、别的仓库结构上能复制到什么程度？
 - 随着模型能力增强，哪些约束会被放松，哪些反而必须更严格？
@@ -100,3 +143,4 @@ sources: [raw/articles/openai-harness-engineering-2026-04-14.md, raw/articles/an
 - [[cognition-swe-check-10x-faster-2026-04-16]]
 - [[langchain-x-post-2044429013301485916-2026-04-16|langchain-x-post-2044429013301485916]]
 - [[cursor-x-post-2044136953239740909-2026-04-16|cursor-x-post-2044136953239740909]]
+- [[ltbase-harness-engineering-2026-04-24|ltbase-harness-engineering]]
