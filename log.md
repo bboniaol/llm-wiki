@@ -566,3 +566,11 @@
 - Updated: index.md (total pages: 79)
 - Key contribution: structured 7-layer framework + 4 design principles + 4 production traps as complementary methodology to existing OpenAI/Anthropic/LangChain sources
 
+## [2026-04-24] ingest | Lychee Technology: Harness Engineering FAQ (Companion)
+- Source URL: https://blog.ltbase.dev/posts/agents/harness-engineering-faq
+- Direct fetch blocked (private network); ingested via browser extraction
+- Raw saved: raw/articles/ltbase-harness-engineering-faq-2026-04-24.md
+- Created: queries/harness-engineering-faq-companion.md (9 Q&A + 5 anti-patterns + implementation order)
+- Updated: concepts/harness-engineering.md (added FAQ source + link)
+- Updated: index.md (total pages: 80)
+- Key contribution: 9 production decisions (tool preprocessing, deterministic validation, DAG execution, plan quality, state storage, boundary validation, Sprint Contract, implementation priority, dynamic tool selection) + 5 common anti-patterns

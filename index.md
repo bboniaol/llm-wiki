@@ -2,7 +2,7 @@
 
 > AI 圈 Harness Engineering 学习知识库索引。
 > 每个页面按类型登记，并附一行摘要。
-> Last updated: 2026-04-24 | Total pages: 79
+> Last updated: 2026-04-24 | Total pages: 80
 
 ## Entities
 <!-- Alphabetical within section -->
@@ -82,6 +82,7 @@
 - [[from-local-coding-agent-to-team-agent-platform]] — 把个人本地 coding agent 演进到团队级 agent 平台的路径压成六阶段路线图。
 - [[harness-engineering-7-day-study-plan]] — 按工作日 2 小时、周末加量的节奏，把 harness engineering 学成一周可执行的系统学习路线。
 - [[harness-engineering-system-map]] — 把当前知识库里的 harness engineering 组件串成一张八层思维导图与系统学习地图。
+- [[harness-engineering-faq-companion]] — 把 Lychee FAQ 的 9 个生产决策 + 5 反模式 + 实现优先级收敛成一张判断地图。
 - [[harness-engineering-signals-2026-04-16]] — 汇总最近 7 天最值得保留的三条 X 信号，并给出 trace/eval/checker/runtime 四层判断。
 - [[harness-engineering-signals-2026-04-18]] — 回看最近 7 天 X 信号后，把 harness discussion 收束成 execution layer 与 improvement layer 两层判断。
 - [[harness-engineering-signals-2026-04-19]] — 今日信号一般但结构更清楚：把最近 7 天的 X/外链信号收束为 execution layer 与 improvement layer 的二阶判断。

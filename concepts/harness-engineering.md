@@ -4,7 +4,7 @@ created: 2026-04-14
 updated: 2026-04-24
 type: concept
 tags: [concept, harness-engineering, agentic-engineering, workflow, reliability, observability]
-sources: [raw/articles/openai-harness-engineering-2026-04-14.md, raw/articles/anthropic-effective-harnesses-long-running-agents-2026-04-14.md, raw/articles/anthropic-harness-design-long-running-apps-2026-04-14.md, raw/articles/langchain-anatomy-of-an-agent-harness-2026-04-14.md, raw/articles/humanlayer-skill-issue-harness-engineering-2026-04-14.md, raw/articles/humanlayer-writing-a-good-claude-md-2026-04-14.md, raw/articles/humanlayer-advanced-context-engineering-2026-04-14.md, raw/articles/humanlayer-context-efficient-backpressure-2026-04-14.md, raw/articles/inngest-harness-not-framework-2026-04-14.md, raw/articles/wolfbench-hermes-agent-x-post-2026-04-14.md, raw/articles/harrison-chase-x-post-2042612328701812789-2026-04-14.md, raw/articles/rohit-x-post-2041548810804211936-2026-04-14.md, raw/articles/viv-x-post-2041927488918413589-2026-04-14.md, raw/articles/sarah-wooders-x-post-2040121230473457921-2026-04-15.md, raw/articles/joao-moura-x-post-2043726271449112776-2026-04-15.md, raw/articles/karan-x-post-2043618895328932340-2026-04-15.md, raw/articles/nlah-arxiv-html-2603-25723-2026-04-15.md, raw/articles/langchain-agent-improvement-loop-2026-04-16.md, raw/articles/cognition-swe-check-10x-faster-2026-04-16.md, raw/articles/cursor-x-post-2044136953239740909-2026-04-16.md, raw/articles/langchain-x-post-2044429013301485916-2026-04-16.md, raw/articles/ltbase-harness-engineering-2026-04-24.md]
+sources: [raw/articles/openai-harness-engineering-2026-04-14.md, raw/articles/anthropic-effective-harnesses-long-running-agents-2026-04-14.md, raw/articles/anthropic-harness-design-long-running-apps-2026-04-14.md, raw/articles/langchain-anatomy-of-an-agent-harness-2026-04-14.md, raw/articles/humanlayer-skill-issue-harness-engineering-2026-04-14.md, raw/articles/humanlayer-writing-a-good-claude-md-2026-04-14.md, raw/articles/humanlayer-advanced-context-engineering-2026-04-14.md, raw/articles/humanlayer-context-efficient-backpressure-2026-04-14.md, raw/articles/inngest-harness-not-framework-2026-04-14.md, raw/articles/wolfbench-hermes-agent-x-post-2026-04-14.md, raw/articles/harrison-chase-x-post-2042612328701812789-2026-04-14.md, raw/articles/rohit-x-post-2041548810804211936-2026-04-14.md, raw/articles/viv-x-post-2041927488918413589-2026-04-14.md, raw/articles/sarah-wooders-x-post-2040121230473457921-2026-04-15.md, raw/articles/joao-moura-x-post-2043726271449112776-2026-04-15.md, raw/articles/karan-x-post-2043618895328932340-2026-04-15.md, raw/articles/nlah-arxiv-html-2603-25723-2026-04-15.md, raw/articles/langchain-agent-improvement-loop-2026-04-16.md, raw/articles/cognition-swe-check-10x-faster-2026-04-16.md, raw/articles/cursor-x-post-2044136953239740909-2026-04-16.md, raw/articles/langchain-x-post-2044429013301485916-2026-04-16.md, raw/articles/ltbase-harness-engineering-2026-04-24.md, raw/articles/ltbase-harness-engineering-faq-2026-04-24.md]
 ---
 
 # Harness Engineering
@@ -74,6 +74,7 @@ sources: [raw/articles/openai-harness-engineering-2026-04-14.md, raw/articles/an
 - [[humanlayer]] 的说法看，[[harness-engineering]] 也可以被理解为 [[context-engineering]] 在 coding agent 配置面上的具体落点。
 - [[natural-language-agent-harnesses]] 则提供了一个更研究化的延伸：把 harness pattern 直接外化成可执行文本对象，在 shared runtime 下做迁移与消融。
 - [[harness-engineering-signals-2026-04-19]] 是最近 7 天社交/外链信号的阶段性二阶判断。
+- [[harness-engineering-faq-companion]] 把 Lychee FAQ 的 9 个生产决策 + 5 反模式 + 实现优先级收敛成一张判断地图。
 
 ## Lychee Technology 的 7 层框架补充
 [[lychee-technology]] 的博客文章提供了一个更结构化的 harness 分层视角，与当前知识库中分散的线索形成互补：
@@ -144,3 +145,4 @@ Lychee 文章给出的 Day 1 起步建议非常务实：
 - [[langchain-x-post-2044429013301485916-2026-04-16|langchain-x-post-2044429013301485916]]
 - [[cursor-x-post-2044136953239740909-2026-04-16|cursor-x-post-2044136953239740909]]
 - [[ltbase-harness-engineering-2026-04-24|ltbase-harness-engineering]]
+- [[ltbase-harness-engineering-faq-2026-04-24|ltbase-harness-engineering-faq]]
