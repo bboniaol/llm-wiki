@@ -610,3 +610,22 @@
   - Stanford Meta-Harness: 76.4% on TerminalBench 2.0 (Claude Opus 4.6, 89×5 trials), key innovation = automated harness evolution + environment bootstrapping
   - Environment bootstrapping: inject sandbox snapshot (cwd, files, languages, tools, package managers, memory) before agent loop, saving 2-5 early exploration turns
   - This is the first public empirical evidence that harness layer can be automatically discovered/optimized, not just hand-tuned
+
+## [2026-04-25] ingest | Meta-Harness paper (arXiv:2603.28052)
+- Source URL: https://arxiv.org/abs/2603.28052
+- Raw saved: raw/papers/meta-harness-paper-2026-03-30.md (full paper extraction)
+- Created: entities/meta-harness.md (Stanford IRIS Lab outer-loop harness optimization system)
+- Updated: entities/wolfbench.md (added Meta-Harness as TerminalBench-2 #2 ranked agent)
+- Updated: index.md (total pages: 84)
+- Key findings from paper:
+  - Meta-Harness is an outer-loop system that searches over harness code using an agentic proposer with filesystem access to all prior candidates' source code, scores, and execution traces
+  - Three domains validated: online text classification (+7.7 pts, 4× fewer tokens), retrieval-augmented math reasoning (+4.7 pts across 5 held-out models), agentic coding (76.4% on TerminalBench-2)
+  - Key design: minimum necessary structure — proposer gets raw filesystem access, not pre-processed summaries; full experience history preserved
+  - Ablation: full interface (scores+traces) reaches 50.0 median accuracy; scores-only 34.6; scores+summary 34.9 — execution traces are the critical ingredient
+  - TerminalBench-2 discovered harness: environment bootstrapping (sandbox snapshot before agent loop: cwd, files, languages, tools, package managers, memory) — saves 2-4 exploration turns
+  - Proposer reads extensively from filesystem during search, equal attention to source code and execution traces
+  - Search narrative: proposer learns from regressions, forms explicit diagnosis, shifts to safer design pattern
+  - OOD generalization: 73.1% average on 9 unseen text classification datasets, outperforming ACE (70.2%)
+  - Ranks #2 among all Opus 4.6 agents on TerminalBench-2 (ForgeCode #1 at 81.8% but unreproducible); #1 among all Haiku 4.5 agents
+  - Main repo: https://github.com/stanford-iris-lab/meta-harness (framework + 2 reference experiments)
+  - TerminalBench-2 artifact: https://github.com/stanford-iris-lab/meta-harness-tbench2-artifact

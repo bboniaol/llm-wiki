@@ -2,7 +2,7 @@
 
 > AI 圈 Harness Engineering 学习知识库索引。
 > 每个页面按类型登记，并附一行摘要。
-> Last updated: 2026-04-25 | Total pages: 83
+> Last updated: 2026-04-25 | Total pages: 84
 
 ## Entities
 <!-- Alphabetical within section -->
@@ -28,6 +28,7 @@
 - [[openai]] — 通过真实产品实践验证 harness engineering 的组织与方法论主体。
 - [[openai-frontier]] — OpenAI 面向 enterprise agent deployment 与 transformation 的平台层上下文。
 - [[sentry]] — Claude Managed Agents 在 bug fixing → PR 闭环中的公开采用案例主体。
+- [[meta-harness]] — Stanford IRIS Lab 的外层循环 harness 优化系统，通过 agentic proposer + 文件系统访问自动搜索 harness 代码，在 TerminalBench-2 上达到 76.4%，验证 harness 可自动优化。
 - [[wolfbench]] — 当前库里关于第三方 harness benchmark 的一个公开信号来源。
 
 ## Concepts
