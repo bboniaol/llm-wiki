@@ -1,10 +1,10 @@
 ---
 title: Codex vs Claude Code vs Cursor
 created: 2026-04-14
-updated: 2026-04-14
+updated: 2026-04-25
 type: comparison
 tags: [comparison, coding-agent, tooling, workflow, best-practice, query-note]
-sources: [raw/articles/openai-harness-engineering-2026-04-14.md, raw/articles/anthropic-claude-code-2026-04-14.md, raw/articles/claude-code-docs-overview-2026-04-14.md, raw/articles/claude-code-auto-mode-2026-04-14.md, raw/articles/claude-code-docs-permission-modes-2026-04-14.md, raw/articles/claude-code-docs-memory-2026-04-14.md, raw/articles/claude-code-docs-sub-agents-2026-04-14.md, raw/articles/claude-code-docs-common-workflows-2026-04-14.md, raw/articles/anthropic-effective-harnesses-long-running-agents-2026-04-14.md, raw/articles/cursor-product-2026-04-14.md, raw/articles/cursor-docs-subagents-2026-04-14.md, raw/articles/cursor-docs-rules-2026-04-14.md, raw/articles/cursor-docs-mcp-2026-04-14.md, raw/articles/cursor-docs-terminal-2026-04-14.md, raw/articles/cursor-docs-agent-overview-2026-04-14.md, raw/articles/cursor-docs-reference-permissions-2026-04-14.md, raw/articles/cursor-docs-reference-sandbox-2026-04-14.md, raw/articles/cursor-docs-browser-2026-04-14.md, raw/articles/cursor-docs-agent-security-2026-04-14.md, raw/articles/cursor-docs-cloud-agent-overview-2026-04-14.md, raw/articles/cursor-docs-cloud-agent-automations-2026-04-14.md, raw/articles/cursor-docs-cloud-agent-capabilities-2026-04-14.md, raw/articles/cursor-docs-enterprise-llm-safety-controls-2026-04-14.md, raw/articles/cursor-docs-enterprise-compliance-monitoring-2026-04-14.md, raw/articles/cursor-money-forward-case-study-2026-04-14.md, raw/articles/anthropic-circleci-claude-case-study-2026-04-14.md, raw/articles/anthropic-sentry-managed-agents-case-study-2026-04-14.md]
+sources: [raw/articles/openai-harness-engineering-2026-04-14.md, raw/articles/anthropic-claude-code-2026-04-14.md, raw/articles/claude-code-docs-overview-2026-04-14.md, raw/articles/claude-code-auto-mode-2026-04-14.md, raw/articles/claude-code-docs-permission-modes-2026-04-14.md, raw/articles/claude-code-docs-memory-2026-04-14.md, raw/articles/claude-code-docs-sub-agents-2026-04-14.md, raw/articles/claude-code-docs-common-workflows-2026-04-14.md, raw/articles/anthropic-effective-harnesses-long-running-agents-2026-04-14.md, raw/articles/cursor-product-2026-04-14.md, raw/articles/cursor-docs-subagents-2026-04-14.md, raw/articles/cursor-docs-rules-2026-04-14.md, raw/articles/cursor-docs-mcp-2026-04-14.md, raw/articles/cursor-docs-terminal-2026-04-14.md, raw/articles/cursor-docs-agent-overview-2026-04-14.md, raw/articles/cursor-docs-reference-permissions-2026-04-14.md, raw/articles/cursor-docs-reference-sandbox-2026-04-14.md, raw/articles/cursor-docs-browser-2026-04-14.md, raw/articles/cursor-docs-agent-security-2026-04-14.md, raw/articles/cursor-docs-cloud-agent-overview-2026-04-14.md, raw/articles/cursor-docs-cloud-agent-automations-2026-04-14.md, raw/articles/cursor-docs-cloud-agent-capabilities-2026-04-14.md, raw/articles/cursor-docs-enterprise-llm-safety-controls-2026-04-14.md, raw/articles/cursor-docs-enterprise-compliance-monitoring-2026-04-14.md, raw/articles/cursor-money-forward-case-study-2026-04-14.md, raw/articles/anthropic-circleci-claude-case-study-2026-04-14.md, raw/articles/anthropic-sentry-managed-agents-case-study-2026-04-14.md, raw/articles/akshay-pachaar-anatomy-of-agent-harness-2026-04-25.md]
 ---
 
 # Codex vs Claude Code vs Cursor
@@ -53,9 +53,30 @@ sources: [raw/articles/openai-harness-engineering-2026-04-14.md, raw/articles/an
 所以 Cursor 现在在库里的轮廓已经不只是“IDE 内 agent 系统化”，而是“agent operating surface + SDLC adoption”做得最全的一方。
 
 ## 如果按工程关注点来选观察角度
-- 关注“真实软件工程闭环案例” → 先看 [[codex]]
-- 关注“跨窗口长任务接棒与长期自主推进 + developer-facing adoption” → 先看 [[claude-code]]
-- 关注“从本地交互式 agent 一路延伸到云端后台代理、组织控制与跨职能 adoption” → 先看 [[cursor]]
+- 关注"真实软件工程闭环案例" → 先看 [[codex]]
+- 关注"跨窗口长任务接棒与长期自主推进 + developer-facing adoption" → 先看 [[claude-code]]
+- 关注"从本地交互式 agent 一路延伸到云端后台代理、组织控制与跨职能 adoption" → 先看 [[cursor]]
+
+## Akshay Pachaar 的平台实现对比补充
+Akshay 的长文把三家的 harness 实现细节做了很好的横向梳理，值得补充到对比表中：
+
+| 维度 | [[codex]] | [[claude-code]] | [[cursor]] |
+|---|---|---|---|
+| **Harness 架构** | Codex Core + App Server + client surfaces（三层共享同一 harness） | Claude Agent SDK（`query()` 函数，async iterator 流式消息） | 本地 IDE agent + cloud agents + automations |
+| **Runtime 哲学** | "code-first"：workflow 逻辑用原生 Python 表达 | "dumb loop"：所有智能在模型，harness 只管 turns | 本地交互式 + 云端后台并行 |
+| **循环模式** | Runner class（async/sync/streamed） | Gather-Act-Verify | Plan/Debug + subagents + checkpoints |
+| **Tool 体系** | function tools + hosted tools + MCP | 6 类：file ops、search、execution、web、code intel、subagents | subagents、rules、MCP、terminal、browser |
+| **记忆实现** | application memory / SDK sessions / Conversations API / `previous_response_id` | 三层：lightweight index + topic files + raw transcripts | rules + AGENTS.md + checkpoints + automation memories |
+| **状态持久** | 四种互斥策略 | git commits + progress files | checkpoints + queue |
+| **错误处理** | 三层 guardrails（input/output/tool）+ tripwire | 在 tool handler 内捕获，返回 error result 保持循环 | permissions + sandbox + enterprise controls |
+| **验证机制** | 依赖外部测试/审查 | rules-based + visual + LLM-as-judge 三种 | browser tools + debug + CI 集成 |
+| **子代理** | agents-as-tools + handoffs | Fork / Teammate / Worktree 三种执行模型 | subagents + orchestrator + parallel cloud agents |
+| **Context 管理** | priority stack（server system msg > tools > dev instructions > user instructions） | compaction + observation masking + JIT retrieval + subagent delegation | lazy loading + indexing + tool output truncation |
+
+关键洞察：
+- **Codex 的 "all surfaces share the same harness"** 解释了为什么 "Codex models feel better on Codex surfaces than a generic chat window" — harness 与模型是 co-evolved 的
+- **Claude Code 的 "dumb loop"** 是最极简的 harness 哲学，与 Anthropic "thin harness + model improvement" 的赌注一致
+- **Cursor 的 hybrid 模式**（本地 + 云端）是目前覆盖场景最广的，但也意味着 harness 复杂度最高
 
 ## 目前还不能下的结论
 基于当前证据，还不能严谨下这些判断：
@@ -105,3 +126,4 @@ sources: [raw/articles/openai-harness-engineering-2026-04-14.md, raw/articles/an
 - [[cursor-docs-enterprise-llm-safety-controls-2026-04-14]]
 - [[cursor-docs-enterprise-compliance-monitoring-2026-04-14]]
 - [[cursor-money-forward-case-study-2026-04-14]]
+- [[akshay-pachaar-anatomy-of-agent-harness-2026-04-25|akshay-pachaar-anatomy-of-agent-harness]]

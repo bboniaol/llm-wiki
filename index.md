@@ -2,10 +2,11 @@
 
 > AI 圈 Harness Engineering 学习知识库索引。
 > 每个页面按类型登记，并附一行摘要。
-> Last updated: 2026-04-24 | Total pages: 82
+> Last updated: 2026-04-25 | Total pages: 83
 
 ## Entities
 <!-- Alphabetical within section -->
+- [[akshay-pachaar]] — 发布《The Anatomy of an Agent Harness》长文，把生产级 agent harness 拆成 12 组件 + 7 架构选择，并横向对比 Anthropic/OpenAI/LangChain/CrewAI/AutoGen 实现细节。
 - [[anthropic]] — Claude / Claude Code / Claude Agent SDK / Managed Agents 的发布方，也是长任务与应用开发 harness 方法的重要来源。
 - [[circleci]] — Claude Code / Claude Agent SDK 在 CI/CD maintenance automation 与 PR 闭环中的公开案例主体。
 - [[claude-code]] — Anthropic 的 agentic coding tool，已出现 initializer/coding 与 planner/generator/evaluator 两类 harness 角色结构。

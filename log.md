@@ -197,7 +197,7 @@
 - Created: comparisons/framework-vs-runtime-vs-harness.md
 - Updated: index.md
 
-## [2026-04-14] ingest | Money Forward brings Cursor’s coding agents to product, design, and QA
+## [2026-04-14] ingest | Money Forward brings Cursor's coding agents to product, design, and QA
 - Source URL: https://cursor.com/blog/money-forward
 - Raw source saved: raw/articles/cursor-money-forward-case-study-2026-04-14.md
 - Created: entities/money-forward.md
@@ -400,7 +400,7 @@
 - Filed: queries/three-platform-archetypes-for-coding-agents.md
 - Updated: index.md
 
-## [2026-04-15] ingest | Harrison Chase “Your harness, your memory”
+## [2026-04-15] ingest | Harrison Chase "Your harness, your memory"
 - Source URL: https://x.com/hwchase17/status/2042978500567609738
 - Raw source saved: raw/articles/harrison-chase-x-post-2042978500567609738-2026-04-15.md
 - Updated: concepts/agent-memory-patterns.md
@@ -409,7 +409,7 @@
 - Updated: entities/langchain.md
 - Updated: index.md
 
-## [2026-04-15] ingest | Sarah Wooders “Why memory isn't a plugin (it's the harness)”
+## [2026-04-15] ingest | Sarah Wooders "Why memory isn't a plugin (it's the harness)"
 - Source URL: https://x.com/sarahwooders/status/2040121230473457921
 - Raw source saved: raw/articles/sarah-wooders-x-post-2040121230473457921-2026-04-15.md
 - Updated: concepts/agent-memory-patterns.md
@@ -427,7 +427,7 @@
 - Updated: concepts/agent-memory-patterns.md
 - Updated: index.md
 
-## [2026-04-15] ingest | João Moura “Agent Harnesses Are Dead. Long Live Agent Harnesses.”
+## [2026-04-15] ingest | João Moura "Agent Harnesses Are Dead. Long Live Agent Harnesses."
 - Source URL: https://x.com/joaomdmoura/status/2043726271449112776
 - Raw source saved: raw/articles/joao-moura-x-post-2043726271449112776-2026-04-15.md
 - Created: entities/crewai.md
@@ -436,7 +436,7 @@
 - Updated: concepts/agentic-engineering.md
 - Updated: index.md
 
-## [2026-04-15] ingest | Karan “Agent Harness is the new system design in 2026”
+## [2026-04-15] ingest | Karan "Agent Harness is the new system design in 2026"
 - Source URL: https://x.com/kmeanskaran/status/2043618895328932340
 - Raw source saved: raw/articles/karan-x-post-2043618895328932340-2026-04-15.md
 - Created: entities/desysflow.md
@@ -585,3 +585,28 @@
 - Updated: comparisons/framework-vs-runtime-vs-harness.md (added "托管模式"比喻行: template config / managed infra / managed harness with 3-body separation)
 - Updated: index.md (total pages: 82)
 - Key contribution: first major "managed harness" product signal — validates that harness engineering is moving toward "thinner harness + heavier infrastructure" rather than "no harness"
+
+## [2026-04-25] ingest | Akshay Pachaar: The Anatomy of an Agent Harness
+- Source URL: https://x.com/akshay_pachaar/status/2041146899319971922
+- Previous fetch on 2026-04-14 returned login wall; successful re-fetch on 2026-04-25 via r.jina.ai
+- Raw saved: raw/articles/akshay-pachaar-anatomy-of-agent-harness-2026-04-25.md (replaced failed raw/articles/x-x-post-2041146899319971922-2026-04-14.md)
+- Created: entities/akshay-pachaar.md (12-component + 7-choice harness map, TerminalBench evidence, platform comparison)
+- Updated: concepts/harness-engineering.md (added conclusion #19, updated sources + updated date)
+- Updated: concepts/coding-agent-workflow-patterns.md (added 7-step TAO cycle + Initializer→Coding Agent接力模式, updated sources + updated date)
+- Updated: concepts/agent-memory-patterns.md (added 三层记忆模型 + OpenAI四类持久策略 + 记忆作为hint, updated sources + updated date)
+- Updated: comparisons/codex-vs-claude-code-vs-cursor.md (added detailed platform implementation comparison table, updated sources + updated date)
+- Updated: index.md (total pages: 83)
+- Key contribution: most complete harness component map in the wiki; 12 components + 7 architectural choices + cross-platform implementation details
+
+## [2026-04-25] ingest | Terminal-Bench 2.0 paper + Stanford Meta-Harness artifact
+- Source URLs: https://arxiv.org/abs/2601.11868, https://github.com/stanford-iris-lab/meta-harness-tbench2-artifact
+- Raw saved: raw/papers/terminal-bench-2.0-paper-2026-01-17.md (arXiv abstract + key facts)
+- Raw saved: raw/articles/stanford-meta-harness-tbench2-2026-04-25.md (GitHub README with method details)
+- Updated: entities/wolfbench.md (added TerminalBench 2.0 academic foundation + Meta-Harness 76.4% result)
+- Updated: concepts/coding-agent-evals.md (added TerminalBench 2.0 as key benchmark + Meta-Harness automated harness evolution as eval new dimension)
+- Updated: entities/akshay-pachaar.md (precise TerminalBench + Meta-Harness citation)
+- Key findings:
+  - TerminalBench 2.0: 89 real-workflow terminal tasks, frontier models/agents < 65%, Harbor harness supports Claude Code/Codex CLI/OpenHands/Mini-SWE-Agent
+  - Stanford Meta-Harness: 76.4% on TerminalBench 2.0 (Claude Opus 4.6, 89×5 trials), key innovation = automated harness evolution + environment bootstrapping
+  - Environment bootstrapping: inject sandbox snapshot (cwd, files, languages, tools, package managers, memory) before agent loop, saving 2-5 early exploration turns
+  - This is the first public empirical evidence that harness layer can be automatically discovered/optimized, not just hand-tuned
