@@ -1,10 +1,10 @@
 ---
 title: Multi-agent Delegation
 created: 2026-04-14
-updated: 2026-04-14
+updated: 2026-04-25
 type: concept
 tags: [concept, orchestration, workflow, automation, coding-agent, agentic-engineering]
-sources: [raw/articles/openai-harness-engineering-2026-04-14.md, raw/articles/claude-code-docs-sub-agents-2026-04-14.md, raw/articles/cursor-docs-subagents-2026-04-14.md, raw/articles/anthropic-effective-harnesses-long-running-agents-2026-04-14.md, raw/articles/anthropic-harness-design-long-running-apps-2026-04-14.md, raw/articles/anthropic-effective-context-engineering-2026-04-14.md, raw/articles/langchain-deepagents-overview-2026-04-14.md, raw/articles/humanlayer-skill-issue-harness-engineering-2026-04-14.md, raw/articles/inngest-harness-not-framework-2026-04-14.md]
+sources: [raw/articles/openai-harness-engineering-2026-04-14.md, raw/articles/claude-code-docs-sub-agents-2026-04-14.md, raw/articles/cursor-docs-subagents-2026-04-14.md, raw/articles/anthropic-effective-harnesses-long-running-agents-2026-04-14.md, raw/articles/anthropic-harness-design-long-running-apps-2026-04-14.md, raw/articles/anthropic-effective-context-engineering-2026-04-14.md, raw/articles/langchain-deepagents-overview-2026-04-14.md, raw/articles/humanlayer-skill-issue-harness-engineering-2026-04-14.md, raw/articles/inngest-harness-not-framework-2026-04-14.md, raw/articles/suryansh-tiwari-sub-agents-vs-agent-teams-2026-04-25.md]
 ---
 
 # Multi-agent Delegation
@@ -32,8 +32,31 @@ multi-agent delegation 指把复杂任务拆分后，交给多个智能体或多
 - [[humanlayer]] 补了一刀很实用的判断：sub-agents 最值得用在 research、codebase exploration、grep/日志检索、文档扫描这类“答案很短、过程很吵”的任务上；它们应返回压缩结论与可追溯引用，而不是把中间噪音倒回父线程。
 - [[inngest]] 则给了一个更基础设施化的实现：主 agent 通过 `step.invoke()` 拉起独立 agent function run，让子代理天然拥有自己的 retries、durable execution、step-level observability 和独立 session key。
 
+## Sub-Agents vs Agent Teams
+
+来自 [[suryansh-tiwari-sub-agents-vs-agent-teams-2026-04-25]] 的核心框架：
+
+| | Sub-Agents | Agent Teams |
+|---|---|---|
+| 焦点 | 执行（并行隔离） | 协作（通信协调） |
+| 状态 | 无状态 | 持久 |
+| 交互 | 一次性 | 持续 |
+| 控制 | Parent 控制 | 点对点 |
+| 上下文 | 完全隔离 | 共享 |
+| 适用 | 任务独立、可干净分离上下文 | 任务相互依赖、需实时协作 |
+
+**关键洞察**：不要按角色（planner/developer/tester）拆分，要按**上下文边界**拆分。如果两个任务共享深层上下文，放在同一个 agent；只有当上下文能干净分离时才拆分。
+
+## 5 个关键模式
+
+1. **Prompt chaining** — 顺序步骤
+2. **Routing** — 任务路由到正确 agent
+3. **Parallelization** — 独立任务并行（sub-agents 主战场）
+4. **Orchestrator–worker** — 一个 agent 委派给多个 worker
+5. **Evaluator–optimizer** — 生成+精炼的闭环
+
 ## 设计原则
-- 先分清角色边界，再决定是否并行，不要为了多 agent 而多 agent。
+- 先分清是"需要并行隔离"还是"需要协作通信"，再选 sub-agents 或 agent teams。
 - 委派单元必须足够独立，避免上下文彼此强耦合。
 - 汇总阶段要有明确裁决机制，否则只是把混乱并行化。
 - delegation 不是替代 [[agent-approval-patterns]] 和 [[agent-sandboxing]]，而是要和它们协同。
@@ -57,6 +80,7 @@ multi-agent delegation 指把复杂任务拆分后，交给多个智能体或多
 - 只有分工，没有汇总与仲裁，最后输出互相冲突。
 - 把 subagent 当成单纯并行加速器，忽略它的核心价值其实是上下文隔离与职责分离。
 - 子 agent 返回完整过程转录，导致父线程重新被噪音污染。
+- **按角色拆分（planner/developer/tester）而不是按上下文边界拆分**，导致每次交接都丢失上下文。
 
 ## 来源
 - [[openai-harness-engineering-2026-04-14]]
